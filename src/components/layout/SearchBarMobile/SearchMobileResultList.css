@@ -1,0 +1,53 @@
+
+
+.searchBarMobile-resultsList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 8px #ddd;
+  border-radius: 20px;
+  height: 550px;
+  overflow-y: auto;
+  position: absolute;
+  top: 50px; 
+  z-index: 1000;
+}
+
+
+.searchBarMobile-searchResult {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBarMobile-resultsList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.searchBarMobile-resultsList li {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.searchBarMobile-resultsList li:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+
+
+.searchBarMobile-contentImg {
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.searchBarMobile-searchResultContent p {
+  margin: 0;
+}

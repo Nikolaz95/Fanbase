@@ -1,0 +1,79 @@
+
+
+/* nav bar */
+
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+  
+.no-underline {
+    text-decoration: none ;
+}
+
+.navbar  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+
+    /* border: 1px solid black; */
+}
+
+.navbar li .active{
+   /*  border: 1px solid black; */
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /* padding: 15px; */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.navbar ul li .active {
+  background: linear-gradient(to right,#c0fecf 0,#1ed5a9 100%);
+  font-weight: bold;
+  padding: 15px;
+}
+
+.navbar ul li a:not(.active):hover {
+  background-color: transparent;
+}
+  
+
+.navigation-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.icon-navigation {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .searchBar-container {
+        display: none;
+      }
+
+    .navbar {
+      display: none;
+    } 
+}

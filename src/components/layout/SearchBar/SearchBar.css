@@ -1,0 +1,40 @@
+
+.searchBar-container {
+  position: relative;
+  width: 50%;
+  margin: 0 auto; /* Center the container */
+}
+
+.searchbar-content {
+  display: flex;
+  width: 100%;
+}
+
+.serch-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  height: 3rem;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+
+.search-input:focus {
+  outline: none;
+}
+
+#search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f70000;
+}
+
