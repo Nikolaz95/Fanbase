@@ -65,10 +65,10 @@ const HomePage = () => {
                         spaceBetween={30}
                         effect={'fade'}
                         navigation={false}
-                        /* autoplay={{
+                        autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
-                        }} */
+                        }}
                         loop={true}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
                         modules={[EffectFade, Navigation, Pagination, Autoplay]}
