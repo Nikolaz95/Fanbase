@@ -85,7 +85,7 @@ const HomePage = () => {
                                     </div>
                                     <div className="HomePg-right">
                                         <div className="HomePg-rightTop">
-                                            <h1 className="HomePg-rightTitle">{movie.title} ({new Date(movie.release_date).getFullYear()})</h1>
+                                            <h1 className="HomePg-rightTitle">{movie.title} DISIS ({new Date(movie.release_date).getFullYear()})</h1>
                                         </div>
                                         <div className="HomePg-rightMiddle">
                                             <p className="HomePg-overWiev">
