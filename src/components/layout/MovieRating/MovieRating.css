@@ -1,0 +1,28 @@
+
+
+.HomePg-ratingCircle {
+    border: 1px solid none;
+    border-radius: 20px;
+    background-color: rgb(210, 242, 52);
+    font-size: 15px;
+    font-weight: 1000;
+    padding: 10px;
+}
+
+
+.rating-green {
+    background-color: green;
+}
+
+.rating-yellow {
+    background-color: yellow;
+    color: black; /* For better readability on yellow background */
+}
+
+.rating-orange {
+    background-color: orange;
+}
+
+.rating-red {
+    background-color: red;
+}

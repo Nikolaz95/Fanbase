@@ -1,0 +1,162 @@
+
+
+/* swiper style */
+
+
+.swiper-pagination-custom{
+    top: 10px;
+  }
+  .slider-content {
+    padding: 10px;
+  }
+  
+  .swiper-slide {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+  }
+  
+  .swiper-homeContent {
+    /* background-color: rgb(189, 238, 93); */
+    height: 520px;
+  }
+  
+  
+  
+  /* strelice  */
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  
+  
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: rgb(247, 255, 1);
+  }
+  
+  /* strelice  */
+
+
+
+  .HomePg-contentUnder {
+    padding: 20px;
+   }
+   
+   
+   .contentUnder-title {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 30px;
+     color: black;
+   }
+   
+   
+   .VievAll {
+     border: 1px solid none;
+     background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+     color: white;
+     border-radius: 20px;
+     padding: 10px;
+     font-weight: bold;
+     cursor: pointer;
+   }
+   
+   
+       /* card conteiner */
+   
+   .conteiner-card {
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+   align-items: center;
+   border-radius: 20px;
+   gap: 10px;
+   }
+   
+   .kartica {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 500px;
+   width: 223px;
+   /* border: 1px solid black; */
+   }
+   
+   .poster {
+   border-radius: 20px;
+   cursor: pointer;
+   width: 100%;
+   height: 330px;
+   }
+     
+   .botom-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   }
+   
+   .card-title {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   }
+     
+   .card-title {
+   text-align: center;
+   }
+     
+   .btn-card{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   padding-bottom: 10px;
+   }
+     
+   button {
+   border: none;
+   border-radius: 10px;
+   padding: 10px;
+   font-weight: bold;
+   font-size: 15px;
+   cursor: pointer;
+   }
+     
+   button, .icon-favorit, .icon-add {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+   }
+     
+   .icon-favorit {
+   font-size: 20px;
+   cursor: pointer;
+   }
+     
+   .icon-add {
+   font-size: 20px;
+   cursor: pointer;
+   }
