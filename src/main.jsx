@@ -6,6 +6,7 @@ import './index.css'
 import Root from './components/Root.jsx';
 import ErrorPage from './components/layout/ErrorPage/ErrorPage.jsx';
 import HomePage from './components/page/HomePage/HomePage.jsx';
+import AllMovies from './components/page/AllMovies/AllMovies.jsx';
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />
+      },
+      {
+        path: "/allMovies",
+        element: <AllMovies />
       },
       {
         path: "*",

@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
+//import titlen Name component
+import TitleName from '../../layout/TitleName/TitleName';
+
 //import css
 import "../../page/HomePage/HomePage.css";
 
@@ -21,7 +24,7 @@ const HomePage = () => {
 
     return (
         <>
-
+            <TitleName title={"Home"} />
             <AutoSlider />
             {/* Now playing in Theatres kontent */}
             <TheatersSlider />

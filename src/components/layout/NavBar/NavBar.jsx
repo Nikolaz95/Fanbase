@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 //import css
 import "../../layout/NavBar/NavBar.css";
@@ -13,10 +14,10 @@ const NavBar = () => {
         <div className="navbar">
             <ul>
                 <li>
-                    <a className='navigation-style'>
+                    <NavLink to="/allMovies" className='navigation-style'>
                         Movies
                         <img src={Movies} height={30} width={30} alt="" className="icon-navigation" />
-                    </a>
+                    </NavLink>
                 </li>
                 <li>
                     <a className='navigation-style'>

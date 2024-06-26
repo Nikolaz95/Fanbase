@@ -1,0 +1,100 @@
+
+
+.all-moviecontent {
+    padding: 20px;
+}
+
+.category-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* all movieList content */
+
+.Main-allmoviesContentList {
+    padding: 20px;
+}
+
+.allmovies-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+}
+
+.allmovies-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 550px;
+    width: 250px;
+}
+
+.allmoviesCards-poster {
+    border-radius: 20px;
+    width: 100%;
+    height: 350px;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.movieall-name {
+    font-size: 20px;
+}
+
+.movieDetails-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button, .icon-favorit, .icon-add {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.icon-favoriteIsFav, .icon-watchlistIsOn {
+    width: 30px;
+    height: 30px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .allmovies-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .allmovies-content {
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 425px) {
+    .allmovies-content {
+        display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+    }
+}
