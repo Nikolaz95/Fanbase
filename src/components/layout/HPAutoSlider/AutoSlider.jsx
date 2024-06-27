@@ -13,7 +13,9 @@ import 'swiper/css/pagination';
 
 //import css
 import "./AutoSlider.css"
+//import components
 import MovieRating from '../MovieRating/MovieRating';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -73,7 +75,9 @@ const AutoSlider = () => {
 
                                 <div className="HomePg-PosterContent">
                                     <div className="HomePg-left">
-                                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='HomePg-posterCard' />
+                                        <NavLink to={`/movies/${movie.id}`}>
+                                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='HomePg-posterCard' />
+                                        </NavLink>
                                     </div>
                                     <div className="HomePg-right">
                                         <div className="HomePg-rightTop">

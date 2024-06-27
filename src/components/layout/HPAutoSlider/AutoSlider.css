@@ -97,19 +97,6 @@
     backdrop-filter: blur(10px);
   }
 
-  .HomePg-rightRating {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 20px;
-    padding-left: 10px;
-    width: fit-content;
-    gap: 10px;
-    color: white;
-    background-color: #b7adad9e;
-    backdrop-filter: blur(10px);
-  }
-
   /* counting circle */
 
   .autoplay-progress {

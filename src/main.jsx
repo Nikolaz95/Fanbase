@@ -7,7 +7,7 @@ import Root from './components/Root.jsx';
 import ErrorPage from './components/layout/ErrorPage/ErrorPage.jsx';
 import HomePage from './components/page/HomePage/HomePage.jsx';
 import AllMovies from './components/page/AllMovies/AllMovies.jsx';
-
+import MovieDetails from './components/page/MovieDetails/MovieDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,9 +19,17 @@ const router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: "/allMovies",
+        path: "/movies",
         element: <AllMovies />
       },
+      {
+        path: "/movies/:id",
+        element: <MovieDetails />
+      },
+      /* {
+        path: "/movies/:id",
+        element: <MovieDetails />
+      }, */
       {
         path: "*",
         element: <ErrorPage />

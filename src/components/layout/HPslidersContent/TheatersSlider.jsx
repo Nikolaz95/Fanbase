@@ -90,15 +90,15 @@ const TheatersSlider = () => {
                             <div className="conteiner-card">
                                 <div className='kartica'>
                                     <div className="topcard">
-                                        <NavLink to={"#"}>
-                                            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt={movie.title} className='poster' />
+                                        <NavLink to={`/movies/${movie.id}`}>
+                                            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt={movie.title} className='poster' title={movie.title} />
                                         </NavLink>
                                     </div>
                                     <div className="botom-card">
                                         <h3 className="card-title">{movie.title}</h3>
                                         <p className="card-rating">Rating: {movie.vote_average}</p>
                                         <div className="btn-card">
-                                            <button className="add-to-watchlist">Add to Watchlist <FiPlusCircle className='icon-add' /></button>
+                                            <button className="add-to-watchlist" title='Add to Watchlist'>Add to Watchlist <FiPlusCircle className='icon-add' /></button>
                                             <button className="add-to-favorites">Add to Favorites <MdFavoriteBorder className='icon-favorit' /></button>
                                         </div>
                                     </div>

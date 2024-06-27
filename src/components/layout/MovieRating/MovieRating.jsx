@@ -19,9 +19,9 @@ const MovieRating = ({ movie }) => {
     const ratingClass = getRatingClass(rating);
 
     return (
-        <span className='HomePg-rightRating'>
+        <span className='Rating'>
             <p>Rating:</p>
-            <span className={`HomePg-ratingCircle ${ratingClass}`}>{rating}</span>
+            <span className={`ratingCircle ${ratingClass}`}>{rating}</span>
         </span>
     );
 };

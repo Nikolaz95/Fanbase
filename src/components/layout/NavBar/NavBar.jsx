@@ -14,7 +14,7 @@ const NavBar = () => {
         <div className="navbar">
             <ul>
                 <li>
-                    <NavLink to="/allMovies" className='navigation-style'>
+                    <NavLink to="/movies" className='navigation-style'>
                         Movies
                         <img src={Movies} height={30} width={30} alt="" className="icon-navigation" />
                     </NavLink>

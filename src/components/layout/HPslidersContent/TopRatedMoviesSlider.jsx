@@ -83,8 +83,8 @@ const TopRatedMoviesSlider = () => {
                             <div className="conteiner-card">
                                 <div className='kartica'>
                                     <div className="topcard">
-                                        <NavLink to={"#"}>
-                                            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt={movie.title} className='poster' />
+                                        <NavLink to={`/movies/${movie.id}`}>
+                                            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt={movie.title} className='poster' title={movie.title} />
                                         </NavLink>
                                     </div>
                                     <div className="botom-card">
