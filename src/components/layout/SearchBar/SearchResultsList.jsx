@@ -4,6 +4,7 @@ import noImg from '../../../assets/pictures/noimg1.png';
 
 //import css
 import "../../layout/SearchBar/SearchResultsList.css";
+import { NavLink } from 'react-router-dom';
 
 const SearchResultsList = ({ searchResults }) => {
     return (
@@ -14,7 +15,9 @@ const SearchResultsList = ({ searchResults }) => {
                         <ul>
                             {searchResults.map((result) => (
                                 <li key={result.id}>
-                                    <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} width={100} height={100} alt={result.title} />
+                                    <NavLink to={`/movies/${result.id}`}>
+                                        <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} width={100} height={100} alt={result.title} />
+                                    </NavLink>
                                     <div className="search-resultContenta">
                                         <p>{result.title}</p>
                                         <p>{result.vote_average}</p>

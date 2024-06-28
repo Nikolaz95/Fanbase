@@ -5,6 +5,7 @@ import noImg from '../../../assets/pictures/noimg1.png';
 
 //import css
 import "../../layout/SearchBarMobile/SearchMobileResultList.css";
+import { NavLink } from 'react-router-dom';
 
 const SearchMobileResultList = ({ searchResults }) => {
     return (
@@ -15,7 +16,9 @@ const SearchMobileResultList = ({ searchResults }) => {
                         <ul >
                             {searchResults.map((result) => (
                                 <li key={result.id}>
-                                    <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} className='searchBarMobile-contentImg' />
+                                    <NavLink to={`/movies/${result.id}`}>
+                                        <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} className='searchBarMobile-contentImg' />
+                                    </NavLink>
                                     <div className="searchBarMobile-resultContenta">
                                         <p>{result.title}</p>
                                         <p>{result.vote_average}</p>
