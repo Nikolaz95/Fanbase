@@ -125,7 +125,7 @@ const MovieDetails = () => {
                         <div className="MovieDetails-fact">
 
                             {/* genres */}
-                            <GenresType />
+                            <GenresType movieDetails={movieDetails} />
                             {/* genres */}
 
                             {/* releaseDetails */}
