@@ -8,6 +8,9 @@ import ErrorPage from './components/layout/ErrorPage/ErrorPage.jsx';
 import HomePage from './components/page/HomePage/HomePage.jsx';
 import AllMovies from './components/page/AllMovies/AllMovies.jsx';
 import MovieDetails from './components/page/MovieDetails/MovieDetails.jsx';
+import SingIn from './components/page/SingIn/SingIn.jsx';
+import Register from './components/page/Registration/Register.jsx';
+import ProfileAccount from './components/page/UserAccount/ProfileAccount.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,10 +29,23 @@ const router = createBrowserRouter([
         path: "/movies/:id",
         element: <MovieDetails />
       },
-      /* {
-        path: "/movies/:id",
-        element: <MovieDetails />
-      }, */
+
+      {
+        path: "/singIn",
+        element: <SingIn />
+      },
+
+      {
+        path: "/registration",
+        element: <Register />
+      },
+      /* profile Account */
+
+      {
+        path: "/user/profile",
+        element: <ProfileAccount />
+      },
+
       {
         path: "*",
         element: <ErrorPage />

@@ -26,10 +26,10 @@ const NavBar = () => {
                     </a>
                 </li>
                 <li>
-                    <a className='navigation-style'>
+                    <NavLink to="/singIn" className='navigation-style'>
                         Sing in
                         <img src={SingIn} height={30} width={30} alt="" className="icon-navigation" />
-                    </a>
+                    </NavLink>
                 </li>
             </ul>
         </div>

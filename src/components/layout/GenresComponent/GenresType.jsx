@@ -15,12 +15,22 @@ import SciFiIcon from "../../../assets/icons/icon-sciFi.png"
 // Genre to icon mapping
 const genreIcons = {
     12: AdventuresIcon,
+    14: "Fantasy",
+    16: "Animation",
     18: DramaIcon,
     27: "horor",
     28: ActionIcon,
+    35: "Comedy",
     53: "Thriller",
     80: CrimeIcon,
     878: SciFiIcon,
+    9648: "Mystery",
+    10749: "Romance",
+    10751: "Family",
+    10759: "Action & Adventure",
+    10762: "Kids",
+    10765: "Sci-Fi & Fantasy",
+    10768: "War & Politics",
 };
 
 

@@ -80,10 +80,76 @@
     gap: 20px;
 }
 
-.MovieDetails-otherInfo {
-    margin-top: 10px;
+/* reviews  */
+
+.section-Reviews {
+    padding: 20px;
 }
 
+.title-Reviews {
+    padding-bottom: 10px;
+}
+
+.content-Reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-Review {
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.inner-Review {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    border: 1px solid black; /* izbrisat poslije */
+}
+
+.icon-Review {
+   display: flex;
+
+   border-radius: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.innerRight-Review {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.innerRight-ReviewTop {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.innerRight-ReviewBoton {
+    border: 1px solid black;
+    padding: 10px;
+    width: 90%;
+}
+
+.ReviewButon {
+    background-color: red;
+    color: white;
+}
+
+.ReviewButon-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* review */
 
 @media only screen and (max-width: 768px) {
     .MovieDetails-PosterContent {

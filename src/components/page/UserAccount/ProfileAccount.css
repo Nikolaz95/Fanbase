@@ -1,0 +1,58 @@
+
+
+.main-contentProfile {
+    padding: 20px;
+}
+
+
+.contentProfile {
+    padding: 20px;
+   /*  min-height: 80vh; */
+}
+
+.main-contentProfile {
+    padding: 20px;
+    /* border: 1px solid  black; */
+}
+
+.head-AcoutProfile {
+    padding: 20px;
+}
+
+.account-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.Profileimg{
+    border-radius: 100px;
+    border: 1px solid black;
+    width: 350px;
+    height: 300px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+  }
+
+
+.addCamera {
+    position: relative;
+    top: -57px;
+    right: -93px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    gap: 20px;
+}

@@ -1,14 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Rating from '@mui/material/Rating';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 //import css
 import "./MovieDetails.css"
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 //import img
 import PosterMovie from "../../../assets/pictures/poster2.jpg"
 import BgPosterMovie from "../../../assets/pictures/bg-poster2.jpg"
-/* import Mising from "../../assets/pictures/mising-pic.jpg" */
+import Mising from "../../../assets/pictures/mising-pic.jpg"
 import AddWatchList from "../../../assets/icons/icon-add.png"
 import IsOnWatchList from "../../../assets/icons/icon-check.png"
 import AddFavoritList from "../../../assets/icons/not-favoritIcon.png"
@@ -17,6 +24,8 @@ import MenuWatch from "../../../assets/icons/icon-menu.png"
 import Xclose from "../../../assets/icons/icon-cancelPic.png"
 import StrmIcon from "../../../assets/icons/icon-hboMax.png"
 import WhereToWatch from '../../layout/ModalWhereToWatch/WhereToWatch';
+import AvatarDefaultImg from "../../../assets/pictures/avatar-profile.jpg"
+import Remove from "../../../assets/icons/icons-remove.png"
 
 
 
@@ -26,10 +35,34 @@ import GenresType from '../../layout/GenresComponent/GenresType';
 import ReleaseDetails from '../../layout/ReleaseDetails/ReleaseDetails';
 import TimeRating from '../../layout/TimeRating/TimeRating';
 import TitleName from '../../layout/TitleName/TitleName';
+import ActorsSection from '../../layout/MovieDetailsComponents/ActorsSection';
 
 
 
 const MovieDetails = () => {
+
+    const ActorSlider = {
+        320: { slidesPerView: 1, spaceBetween: 10, },
+        330: { slidesPerView: 1, spaceBetween: 10, },
+        340: { slidesPerView: 1, spaceBetween: 10, },
+        350: { slidesPerView: 1, spaceBetween: 10, },
+        370: { slidesPerView: 1, spaceBetween: 10, },
+        660: { slidesPerView: 2, spaceBetween: 10, },
+        960: { slidesPerView: 3, spaceBetween: 10, },
+        1260: { slidesPerView: 4, spaceBetween: 10, },
+        1600: { slidesPerView: 5, spaceBetween: 10, },
+    };
+
+    const breakpoints = {
+        320: { slidesPerView: 1, spaceBetween: 10, },
+        340: { slidesPerView: 1, spaceBetween: 10, },
+        660: { slidesPerView: 2, spaceBetween: 10, },
+        960: { slidesPerView: 3, spaceBetween: 10, },
+        1260: { slidesPerView: 4, spaceBetween: 10, },
+        1600: { slidesPerView: 5, spaceBetween: 10, },
+    };
+
+
     //open/close modal
     const [openModal, setOpenModal] = useState(false)
     const menuRef = useRef(null);
@@ -62,6 +95,8 @@ const MovieDetails = () => {
     const [movieDetails, setMovieDetails] = useState(null);
     /* fetch  watchProviders*/
     const [watchProviders, setWatchProviders] = useState(null);
+    /* fetch   actors */
+    const [actors, setActors] = useState(null);
 
 
 
@@ -72,7 +107,14 @@ const MovieDetails = () => {
             setMovieDetails(json);
             console.log(json)
         }
+        async function fetchMovieActors() {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=d0e15d3cd703e39934833d9dc348e907`);
+            const json = await response.json();
+            setActors(json);
+        }
+
         fetchMovieDetails();
+        fetchMovieActors()
     }, [params.id])
 
 
@@ -153,18 +195,40 @@ const MovieDetails = () => {
                 </div>
 
                 <main className='MovieDetails-otherInfo'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias porro ut dolorum exercitationem omnis repellendus dolores at pariatur eum alias quisquam ab, eius, aut dolor! Provident vel autem mollitia fuga.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum sapiente ipsam impedit nam illum itaque hic alias enim velit voluptate natus, consequatur fuga placeat vel! Rerum a voluptatibus, ut, consectetur explicabo neque at molestias beatae quos, perspiciatis unde nihil! Incidunt repudiandae et laborum unde placeat, deserunt est odio autem exercitationem repellat nulla aliquam? Praesentium facere omnis exercitationem rerum repellat natus est doloremque nisi accusamus. Dolore autem rerum eum necessitatibus officiis alias quasi error dolorem est nihil, ut reiciendis ipsa consectetur id ab odio atque aliquid? Rem quas nemo neque animi ipsam modi dolorem! Tempore assumenda odit dignissimos pariatur cupiditate repudiandae, hic illum delectus iure sunt eos nisi quidem alias corporis ex. Nulla doloribus commodi sit nostrum, odit labore, illo natus enim repellat rerum repudiandae autem similique. Natus blanditiis tenetur totam ullam fuga debitis maxime non, quisquam modi iure nesciunt laboriosam in, officiis eos eveniet. Porro nobis velit veritatis dicta minus, totam eius necessitatibus maiores provident impedit libero. Ab ut minus, pariatur harum autem ratione nulla saepe? Dolores velit blanditiis sequi rem, nulla optio dolorum numquam culpa tempore accusantium perspiciatis aliquid modi eaque beatae assumenda autem deserunt asperiores. Quas eligendi consequuntur ex? Assumenda voluptatum atque at voluptates, iste temporibus cumque vero quasi fugit labore laudantium ullam molestiae optio dicta excepturi a quam impedit suscipit adipisci velit? Eaque soluta repellendus obcaecati dolorum dolore suscipit quaerat, consequatur, cumque deleniti hic ea voluptate voluptatem fugiat quidem ipsa quod eos atque earum dignissimos incidunt modi quos. Inventore minima necessitatibus fugit eaque ipsa tenetur laborum quisquam delectus culpa mollitia molestiae excepturi eum ex unde in sapiente perferendis eveniet, asperiores quibusdam et aliquam! Neque, rem esse repellat necessitatibus voluptatibus reiciendis, debitis odio error odit doloribus illo ut voluptate maxime ipsa iste? Quaerat, magnam voluptatem veniam similique hic rem beatae fugiat adipisci laborum laboriosam vero repudiandae earum!</p>
-                    </div>
+                    {/* movie REVIEWS */}
+                    <section className='section-Reviews'>
+                        <h1 className='title-Reviews'>Reviews (18)</h1>
+                        <div className="content-Reviews">
+                            {/* pocetak kart reviwes */}
+                            <div className="main-Review">
+                                <div className="inner-Review">
+                                    <div className="innerLeft-Review">
+                                        <img src={AvatarDefaultImg} alt="" className="icon-Review" />
+                                    </div>
+                                    <div className="innerRight-Review">
+                                        <div className="innerRight-ReviewTop">
+                                            <div className="innerRight-ReviewButon">
+                                                <p>Joe</p>
+                                                <p>08-02-2024 21:01:56</p>
+                                            </div>
+                                            <div className="innerRight-ReviewButon">
+                                                <button className='ReviewButon'> <img src={Remove} className='ReviewButon-icon' alt="" />Remove</button>
+                                            </div>
+                                        </div>
+                                        <div className="innerRight-ReviewBoton">
+                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, ducimus ab consequatur omnis optio voluptatibus nobis fuga in officia. Facere ad est obcaecati animi! Maiores recusandae a, eaque nostrum ab similique porro! Iste ullam quae consequuntur expedita impedit veniam repellendus libero doloribus fugit. Repudiandae amet ad cupiditate eos deserunt! Fugit?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* KRAj kart reviwes */}
+                        </div>
+                    </section>
+                    {/* movie REVIEWS */}
+                    <ActorsSection actors={actors} />
                 </main>
 
-                <main>
-                    <div>
-                        <p>2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias porro ut dolorum exercitationem omnis repellendus dolores at pariatur eum alias quisquam ab, eius, aut dolor! Provident vel autem mollitia fuga.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum sapiente ipsam impedit nam illum itaque hic alias enim velit voluptate natus, consequatur fuga placeat vel! Rerum a voluptatibus, ut, consectetur explicabo neque at molestias beatae quos, perspiciatis unde nihil! Incidunt repudiandae et laborum unde placeat, deserunt est odio autem exercitationem repellat nulla aliquam? Praesentium facere omnis exercitationem rerum repellat natus est doloremque nisi accusamus. Dolore autem rerum eum necessitatibus officiis alias quasi error dolorem est nihil, ut reiciendis ipsa consectetur id ab odio atque aliquid? Rem quas nemo neque animi ipsam modi dolorem! Tempore assumenda odit dignissimos pariatur cupiditate repudiandae, hic illum delectus iure sunt eos nisi quidem alias corporis ex. Nulla doloribus commodi sit nostrum, odit labore, illo natus enim repellat rerum repudiandae autem similique. Natus blanditiis tenetur totam ullam fuga debitis maxime non, quisquam modi iure nesciunt laboriosam in, officiis eos eveniet. Porro nobis velit veritatis dicta minus, totam eius necessitatibus maiores provident impedit libero. Ab ut minus, pariatur harum autem ratione nulla saepe? Dolores velit blanditiis sequi rem, nulla optio dolorum numquam culpa tempore accusantium perspiciatis aliquid modi eaque beatae assumenda autem deserunt asperiores. Quas eligendi consequuntur ex? Assumenda voluptatum atque at voluptates, iste temporibus cumque vero quasi fugit labore laudantium ullam molestiae optio dicta excepturi a quam impedit suscipit adipisci velit? Eaque soluta repellendus obcaecati dolorum dolore suscipit quaerat, consequatur, cumque deleniti hic ea voluptate voluptatem fugiat quidem ipsa quod eos atque earum dignissimos incidunt modi quos. Inventore minima necessitatibus fugit eaque ipsa tenetur laborum quisquam delectus culpa mollitia molestiae excepturi eum ex unde in sapiente perferendis eveniet, asperiores quibusdam et aliquam! Neque, rem esse repellat necessitatibus voluptatibus reiciendis, debitis odio error odit doloribus illo ut voluptate maxime ipsa iste? Quaerat, magnam voluptatem veniam similique hic rem beatae fugiat adipisci laborum laboriosam vero repudiandae earum!</p>
-                    </div>
-                </main>
+
             </section >
         </>
     )

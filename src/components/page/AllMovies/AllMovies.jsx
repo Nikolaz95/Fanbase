@@ -87,7 +87,7 @@ const AllMovies = () => {
                     {movies.map((movie) => (
                         <div key={movie.id} className={`allmovies-card ${selectedCategory}`}>
                             <div className="allmovies-cardtop">
-                                <NavLink to={/* `/movies/${movie.id}` */ "#"}>
+                                <NavLink to={`/movies/${movie.id}`}>
                                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" className="allmoviesCards-poster" title={movie.title} />
                                 </NavLink>
                             </div>
