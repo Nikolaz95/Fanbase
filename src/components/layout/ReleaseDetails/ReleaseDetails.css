@@ -1,0 +1,56 @@
+
+/*  releaseDetails*/
+.MovieDetails-releaseDetails  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    width: fit-content;
+}
+.releasedStatusInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    padding-left: 10px;
+    width: fit-content;
+    gap: 10px;
+    color: white;
+    background-color: #b7adad9e;
+    backdrop-filter: blur(10px);
+}
+.statusCircle {
+    border: 1px solid none;
+    border-radius: 20px;
+    background-color: rgb(210, 242, 52);
+    font-size: 15px;
+    font-weight: 1000;
+    padding: 10px;
+}
+.releasedDateInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    padding-left: 10px;
+    width: fit-content;
+    gap: 10px;
+    color: white;
+    background-color: #b7adad9e;
+    backdrop-filter: blur(10px);
+}
+
+/*  releaseDetails*/
+
+
+@media only screen and (max-width: 768px) {
+    .MovieDetails-releaseDetails {
+        display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }
+}

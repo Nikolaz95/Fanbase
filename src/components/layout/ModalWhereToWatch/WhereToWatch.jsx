@@ -10,7 +10,7 @@ import PosterMovie from "../../../assets/pictures/poster2.jpg"
 //import css
 import "./WhereToWatch.css"
 
-const WhereToWatch = ({ onClickCloseModal, menuRef }) => {
+const WhereToWatch = ({ onClickCloseModal, menuRef, watchProviders, movieDetails }) => {
     return (
 
         <div className="modal-WhertoWth" >
@@ -20,7 +20,7 @@ const WhereToWatch = ({ onClickCloseModal, menuRef }) => {
                         <img src={Xclose} width={20} height={20} className='iconX-close' alt="" />
                     </span>
                     <div className="modal-left">
-                        <img src={PosterMovie} className='modal-Posterimg' alt="" />
+                        <img src={movieDetails?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_multi_faces/${movieDetails.poster_path}` : "Mising"} className='modal-Posterimg' alt="" />
                     </div>
                     <div className="modal-right">
                         <h3>Stream</h3>

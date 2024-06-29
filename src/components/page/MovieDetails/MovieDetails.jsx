@@ -2,10 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Rating from '@mui/material/Rating';
 import { useParams } from 'react-router-dom';
 
-//import titlen Name component
-import TitleName from '../../layout/TitleName/TitleName';
 //import css
 import "./MovieDetails.css"
+
 //import img
 import PosterMovie from "../../../assets/pictures/poster2.jpg"
 import BgPosterMovie from "../../../assets/pictures/bg-poster2.jpg"
@@ -22,7 +21,11 @@ import WhereToWatch from '../../layout/ModalWhereToWatch/WhereToWatch';
 
 
 //import components
-/* import MovieRating from '../MovieRating/MovieRating'; */
+import UserRating from '../../layout/UserRating/UserRating';
+import GenresType from '../../layout/GenresComponent/GenresType';
+import ReleaseDetails from '../../layout/ReleaseDetails/ReleaseDetails';
+import TimeRating from '../../layout/TimeRating/TimeRating';
+import TitleName from '../../layout/TitleName/TitleName';
 
 
 
@@ -30,6 +33,7 @@ const MovieDetails = () => {
     //open/close modal
     const [openModal, setOpenModal] = useState(false)
     const menuRef = useRef(null);
+    const params = useParams();
     const onClickOpenModal = () => {
         setOpenModal(true)
     }
@@ -52,24 +56,13 @@ const MovieDetails = () => {
     }, []);
     /* klick outside to close */
 
-
-    /* rating */
-    const [ratingValue, setRatingValue] = useState(0);
-    console.log("You rate movie with", ratingValue)
-
-
     /* fetch data */
 
-    const params = useParams();
+    /* fetch  movie Details*/
     const [movieDetails, setMovieDetails] = useState(null);
-    /* fetch  recommendations*/
-    const [similar, setSimilar] = useState([]);
-    /* fetch  credits actors */
-    const [credits, setCredits] = useState(null);
-    /* fetch  images in movie */
-    const [picturesOfMovie, setPicturesOfMovie] = useState([]);
-    /* fetch  video from movie */
-    const [videosOfMovie, setVideosOfMovie] = useState([]);
+    /* fetch  watchProviders*/
+    const [watchProviders, setWatchProviders] = useState(null);
+
 
 
     useEffect(() => {
@@ -79,37 +72,7 @@ const MovieDetails = () => {
             setMovieDetails(json);
             console.log(json)
         }
-
-        async function fetchPicturesOfMovie() {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/images?api_key=d0e15d3cd703e39934833d9dc348e907`);
-            const json = await response.json();
-            setPicturesOfMovie(json);
-        }
-
-        async function fetchVideosOfMovie() {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=d0e15d3cd703e39934833d9dc348e907`);
-            const json = await response.json();
-            setVideosOfMovie(json);
-        }
-
-        async function fetchMovieActors() {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=d0e15d3cd703e39934833d9dc348e907`);
-            const json = await response.json();
-            setCredits(json);
-        }
-
-        async function fetchMovieRecommendations() {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=d0e15d3cd703e39934833d9dc348e907`);
-
-            const json = await response.json();
-            setSimilar(json.results);
-        }
-
         fetchMovieDetails();
-        fetchPicturesOfMovie();
-        fetchVideosOfMovie();
-        fetchMovieActors();
-        fetchMovieRecommendations();
     }, [params.id])
 
 
@@ -117,193 +80,90 @@ const MovieDetails = () => {
     return (
         <>
             <TitleName title={movieDetails?.original_title} />
-
             <section className='MovieDetails-section'>
-
                 <div className='MovieDetails-topContent'>
                     <div className="MovieDetails-BgPoster">
                         <img src={movieDetails?.backdrop_path ? `https://www.themoviedb.org/t/p/original/${movieDetails.backdrop_path}` : 'Missing'} alt="" className='MovieDetails-BgPosterImg' />
                     </div>
 
-                    <div className="MovieDetails-PosterContent">
-                        <div className="MovieDetails-left">
-                            <img src={movieDetails?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_multi_faces/${movieDetails.poster_path}` : "Mising"} className='MovieDetails-PosterImg' />
-                            <div className="whereToWatch">
-                                <button onClick={onClickOpenModal} className="whereToWatch-btn">Where to watch ?
-                                    <img src={MenuWatch} width={40} height={40} alt="" />
-                                </button>
-                            </div>
+                </div>
+                <div className="MovieDetails-PosterContent">
+                    <div className="MovieDetails-left">
 
-                            {/* modal where to watch */}
+                        <img src={movieDetails?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_multi_faces/${movieDetails.poster_path}` : "Mising"} className='MovieDetails-PosterImg' />
 
-                            {/* <div className="modal-WhertoWth">
-                                <div className="modal-ContentWhertoWth">
-                                    <div className="modal-InnerInfo">
-                                        <span className="modal-closeX">
-                                            <img src={Xclose} width={20} height={20} className='iconX-close' alt="" />
-                                        </span>
-                                        <div className="modal-left">
-                                            <img src={PosterMovie} className='modal-Posterimg' alt="" />
-                                        </div>
-                                        <div className="modal-right">
-                                            <h3>Stream</h3>
-                                            <div className="WhertoWthContent">
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
+                        {/* ovo cemo poslije kad imadnem vremena */}
+                        {/* <button onClick={onClickOpenModal} className="whereToWatch-btn">Where to watch ?
+                                <img src={MenuWatch} alt="" className="whereToWatch-btnLogo" />
+                            </button> */}
+                        {/* ovo cemo poslije kad imadnem vremena */}
 
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                            </div>
-                                            <h3>Rent</h3>
-                                            <div className="WhertoWthContent">
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-                                            </div>
-
-                                            <h3>Buy</h3>
-                                            <div className="WhertoWthContent">
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-                                                <span>
-                                                    <img src={StrmIcon} title='Strem on Hbo' alt="" className='Modal-strIcon' />
-                                                </span>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
-                            {openModal && (
+                        {/* ovo cemo poslije kad imadnem vremena . ovo je info gdje gledat film*/}
+                        {/* modal where to watch */}
+                        {/* ovo cemo poslije kad imadnem vremena */}
+                        {/* {openModal && (
                                 <WhereToWatch
                                     onClickCloseModal={onClickCloseModal}
                                     menuRef={menuRef}
-                                />
-                            )}
+                                    watchProviders={watchProviders}
+                                    movieDetails={movieDetails}/>
+                            )} */}
+                        {/* ovo cemo poslije kad imadnem vremena */}
+                        {/* modal where to watch */}
 
-                            {/* modal where to watch */}
+                    </div>
 
+                    <div className="MovieDetails-right">
+                        <div className="MovieDetails-rightTop">
+                            <h1 className="MovieDetails-rightTitle">{movieDetails?.original_title}</h1>
+                        </div>
+                        <div className="MovieDetails-rightMiddle">
+                            <p className="MovieDetails-overWiev">{movieDetails?.overview}</p>
+                            <p className="MovieDetails-tagline">"{movieDetails?.tagline}"</p>
                         </div>
 
-                        <div className="MovieDetails-right">
-                            <div className="MovieDetails-rightTop">
-                                <h1 className="MovieDetails-rightTitle">{movieDetails?.original_title}</h1>
-                            </div>
-                            <div className="MovieDetails-rightMiddle">
-                                <p className="MovieDetails-overWiev">{movieDetails?.overview}</p>
-                                <p className="MovieDetails-tagline">"{movieDetails?.tagline}"</p>
-                            </div>
+                        <div className="MovieDetails-fact">
 
-                            <div className="MovieDetails-fact">
-                                <div className="movieDetails-genres">
-                                    <div className="movieDetails-genresContent">
-                                        <p className='genresText'>Action</p>
-                                        <img src={MenuWatch} className='genresImg' alt="" />
-                                    </div>
+                            {/* genres */}
+                            <GenresType />
+                            {/* genres */}
 
-                                    <div className="movieDetails-genresContent">
-                                        <p className='genresText'>Adventure</p>
-                                        <img src={MenuWatch} className='genresImg' alt="" />
-                                    </div>
+                            {/* releaseDetails */}
+                            <ReleaseDetails movieDetails={movieDetails} />
+                            {/* releaseDetails */}
 
-                                    <div className="movieDetails-genresContent">
-                                        <p className='genresText'>Science Fiction</p>
-                                        <img src={MenuWatch} className='genresImg' alt="" />
-                                    </div>
-
-                                </div>
-
-                                <div className='MovieDetails-releaseDetails'>
-                                    {/* <span>Status:<span className="releasedInfo">Released</span></span> */}
-                                    <span className='releasedInfo'>
-                                        <p>Status:</p>
-                                        <span className="releasedInfoCircle">{/* {rating} */} {movieDetails?.status}
-                                        </span>
-                                    </span>
-                                    <span className='releaseDate'>Release :</span>
-                                    <span className="releasedDateInfo">
-                                        {movieDetails?.release_date}
-                                    </span>
-                                    {/* <span>Released</span> */}
-                                </div>
-
-                                <div className='MovieDetails-timeDetails'>
-                                    <span className='runTime'>Runtime: {movieDetails?.runtime} min</span>
-                                    {/* <span>149 min</span> */}
-                                    <span className='Rating'>
-                                        <p>Rating:</p>
-                                        <span className="ratingCircle">{/* {rating} */} {movieDetails?.vote_average}</span>
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                            <div className="usersRating">
-                                <Rating
-                                    precision={0.5}
-                                    max={5}
-                                    value={ratingValue}
-                                    onChange={(event, newValue) => setRatingValue(newValue)}
-                                />
-
-                            </div>
-
-                            <div className="MovieDetails-btns">
-                                <button>
-                                    <img src={AddWatchList} width={25} height={25} alt="" />
-                                    Add to Watchlist
-                                </button>
-                                <button>
-                                    <img src={AddFavoritList} width={25} height={25} alt="" />
-                                    Add to Favorites
-                                </button>
-                            </div>
+                            {/* TimeRating */}
+                            <TimeRating movieDetails={movieDetails} />
+                            {/* TimeRating */}
+                        </div>
+                        {/* userRating */}
+                        <UserRating />
+                        {/* userRating */}
+                        <div className="MovieDetails-btns">
+                            <button>
+                                <img src={AddWatchList} width={20} height={20} alt="" />
+                                Add to Watchlist
+                            </button>
+                            <button>
+                                <img src={AddFavoritList} width={20} height={20} alt="" />
+                                Add to Favorites
+                            </button>
                         </div>
                     </div>
                 </div>
 
+                <main className='MovieDetails-otherInfo'>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias porro ut dolorum exercitationem omnis repellendus dolores at pariatur eum alias quisquam ab, eius, aut dolor! Provident vel autem mollitia fuga.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum sapiente ipsam impedit nam illum itaque hic alias enim velit voluptate natus, consequatur fuga placeat vel! Rerum a voluptatibus, ut, consectetur explicabo neque at molestias beatae quos, perspiciatis unde nihil! Incidunt repudiandae et laborum unde placeat, deserunt est odio autem exercitationem repellat nulla aliquam? Praesentium facere omnis exercitationem rerum repellat natus est doloremque nisi accusamus. Dolore autem rerum eum necessitatibus officiis alias quasi error dolorem est nihil, ut reiciendis ipsa consectetur id ab odio atque aliquid? Rem quas nemo neque animi ipsam modi dolorem! Tempore assumenda odit dignissimos pariatur cupiditate repudiandae, hic illum delectus iure sunt eos nisi quidem alias corporis ex. Nulla doloribus commodi sit nostrum, odit labore, illo natus enim repellat rerum repudiandae autem similique. Natus blanditiis tenetur totam ullam fuga debitis maxime non, quisquam modi iure nesciunt laboriosam in, officiis eos eveniet. Porro nobis velit veritatis dicta minus, totam eius necessitatibus maiores provident impedit libero. Ab ut minus, pariatur harum autem ratione nulla saepe? Dolores velit blanditiis sequi rem, nulla optio dolorum numquam culpa tempore accusantium perspiciatis aliquid modi eaque beatae assumenda autem deserunt asperiores. Quas eligendi consequuntur ex? Assumenda voluptatum atque at voluptates, iste temporibus cumque vero quasi fugit labore laudantium ullam molestiae optio dicta excepturi a quam impedit suscipit adipisci velit? Eaque soluta repellendus obcaecati dolorum dolore suscipit quaerat, consequatur, cumque deleniti hic ea voluptate voluptatem fugiat quidem ipsa quod eos atque earum dignissimos incidunt modi quos. Inventore minima necessitatibus fugit eaque ipsa tenetur laborum quisquam delectus culpa mollitia molestiae excepturi eum ex unde in sapiente perferendis eveniet, asperiores quibusdam et aliquam! Neque, rem esse repellat necessitatibus voluptatibus reiciendis, debitis odio error odit doloribus illo ut voluptate maxime ipsa iste? Quaerat, magnam voluptatem veniam similique hic rem beatae fugiat adipisci laborum laboriosam vero repudiandae earum!</p>
+                    </div>
+                </main>
+
                 <main>
+                    <div>
+                        <p>2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias porro ut dolorum exercitationem omnis repellendus dolores at pariatur eum alias quisquam ab, eius, aut dolor! Provident vel autem mollitia fuga.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum sapiente ipsam impedit nam illum itaque hic alias enim velit voluptate natus, consequatur fuga placeat vel! Rerum a voluptatibus, ut, consectetur explicabo neque at molestias beatae quos, perspiciatis unde nihil! Incidunt repudiandae et laborum unde placeat, deserunt est odio autem exercitationem repellat nulla aliquam? Praesentium facere omnis exercitationem rerum repellat natus est doloremque nisi accusamus. Dolore autem rerum eum necessitatibus officiis alias quasi error dolorem est nihil, ut reiciendis ipsa consectetur id ab odio atque aliquid? Rem quas nemo neque animi ipsam modi dolorem! Tempore assumenda odit dignissimos pariatur cupiditate repudiandae, hic illum delectus iure sunt eos nisi quidem alias corporis ex. Nulla doloribus commodi sit nostrum, odit labore, illo natus enim repellat rerum repudiandae autem similique. Natus blanditiis tenetur totam ullam fuga debitis maxime non, quisquam modi iure nesciunt laboriosam in, officiis eos eveniet. Porro nobis velit veritatis dicta minus, totam eius necessitatibus maiores provident impedit libero. Ab ut minus, pariatur harum autem ratione nulla saepe? Dolores velit blanditiis sequi rem, nulla optio dolorum numquam culpa tempore accusantium perspiciatis aliquid modi eaque beatae assumenda autem deserunt asperiores. Quas eligendi consequuntur ex? Assumenda voluptatum atque at voluptates, iste temporibus cumque vero quasi fugit labore laudantium ullam molestiae optio dicta excepturi a quam impedit suscipit adipisci velit? Eaque soluta repellendus obcaecati dolorum dolore suscipit quaerat, consequatur, cumque deleniti hic ea voluptate voluptatem fugiat quidem ipsa quod eos atque earum dignissimos incidunt modi quos. Inventore minima necessitatibus fugit eaque ipsa tenetur laborum quisquam delectus culpa mollitia molestiae excepturi eum ex unde in sapiente perferendis eveniet, asperiores quibusdam et aliquam! Neque, rem esse repellat necessitatibus voluptatibus reiciendis, debitis odio error odit doloribus illo ut voluptate maxime ipsa iste? Quaerat, magnam voluptatem veniam similique hic rem beatae fugiat adipisci laborum laboriosam vero repudiandae earum!</p>
+                    </div>
                 </main>
             </section >
         </>

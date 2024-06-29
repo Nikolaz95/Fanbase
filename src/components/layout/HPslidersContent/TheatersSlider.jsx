@@ -19,6 +19,12 @@ import { FiPlusCircle } from "react-icons/fi";
 //impor img
 import Poster1 from "../../../assets/pictures/poster1.jpg";
 import PosterMising from "../../../assets/pictures/noimg1.png";
+//import img
+import AddWatchList from "../../../assets/icons/icon-add.png"
+import IsOnWatchList from "../../../assets/icons/icon-check.png"
+import AddFavoritList from "../../../assets/icons/not-favoritIcon.png"
+import AddFavoritList2 from "../../../assets/icons/icon-like.png"
+
 
 //import css
 import "./HpSlidersContent.css";
@@ -98,8 +104,16 @@ const TheatersSlider = () => {
                                         <h3 className="card-title">{movie.title}</h3>
                                         <p className="card-rating">Rating: {movie.vote_average}</p>
                                         <div className="btn-card">
-                                            <button className="add-to-watchlist" title='Add to Watchlist'>Add to Watchlist <FiPlusCircle className='icon-add' /></button>
-                                            <button className="add-to-favorites">Add to Favorites <MdFavoriteBorder className='icon-favorit' /></button>
+                                            <button className="add-to-watchlist"
+                                                title='Add to Watchlist'>
+                                                Add to Watchlist
+                                                <img src={AddWatchList} alt="" className='icon-add' />
+                                            </button>
+                                            <button
+                                                className="add-to-favorites">
+                                                Add to Favorites
+                                                <img src={AddFavoritList} alt="" className='icon-favorit' />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
