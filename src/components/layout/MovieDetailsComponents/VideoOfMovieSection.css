@@ -1,0 +1,48 @@
+
+
+/* css video */
+
+.section-videosOfMovie {
+    padding: 20px;
+}
+
+.content-videosOfMovie {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.videosOfMovieMp4 {
+    /* width: 100%; */
+    /* width: 500px; */
+    /* border: 4px solid rgb(148, 0, 0); */
+    /* height: 550px; */
+    border-radius: 20px;
+}
+
+
+/* swiper content actors */
+.swiper-TrailsMovie {
+    /* background-color: rgb(30, 33, 207); */
+    height: 530px;
+}
+
+.swiper-TrailsMovie .swiper-button-next, .swiper-button-prev{
+    color: red;
+}
+
+
+@media only screen and (max-width: 425px) {
+    .swiper-TrailsMovie {
+        background-color: rgb(50, 71, 205);
+        height: 550px;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+}

@@ -2,15 +2,10 @@
 
 /* style za info od filma */
 
-.MovieDetails-otherInfo {
-    margin-top: 10px;
-    /* padding: 20px; */
-}
-
-
 .section-Actors {
     padding: 20px;
 }
+
 
 /* stile za actors */
 /* actors */
@@ -22,19 +17,19 @@
   
     .actors-content {
       display: flex;
-      justify-content: center;
+      /* justify-content: center; */
       flex-direction: column;
-      align-items: center;
+      /* align-items: center; */
       border-radius: 20px;
       gap: 10px;
     }
   
     .actors-card {
       display: flex;
-      justify-content: center;
+      /* justify-content: center; */
       flex-direction: column;
       align-items: center;
-      height: 600px;
+      /* height: 600px; */
       width: 300px;
       border-radius: 20px;
     }
@@ -61,72 +56,24 @@
       font-size: 20px;
     }
   
-  
-  
-    /* strelice */
-  
-  
-    .slider-content {
-      padding: 10px;
-    }
-  
-    .swiper-slide {
-      flex-shrink: 0;
-      width: 100px;
-      height: 100%;
-      position: relative;
-      transition-property: transform;
-      display: block;
+/* swiper content actors */
+.swiper-Actors {
+  background-color: yellowgreen;
+  height: 520px;
+}
+
+
+@media only screen and (max-width: 425px) {
+  .swiper-Actors {
+      background-color: rgb(50, 71, 205);
+      height: 505px;
   }
   
-    .swiper {
-      padding: 10px;
-      /* background-color: rgb(189, 238, 93); */
-      min-height: 350px;
-    }
-  
-    .poster {
-      border-radius: 20px;
-      cursor: pointer;
-      width: 290px; 
-      height: 400px; 
-    }
-    
-  
-    .swiper-wrapper {
-      padding-bottom: 50px;
-    }
-  
-    
-  
-  
-    /* strelice  */
-    .swiper-button-prev,
-    .swiper-button-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px; /* Adjust as needed */
-      height: 30px; /* Adjust as needed */
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .swiper-button-prev {
-      left: 10px;
-    }
-    
-    .swiper-button-next {
-      right: 10px;
-    }
-    
-  
-    
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: rgb(18, 72, 19);
-    }
-  
-    /* strelice  */
-/* stile za actors */
+  .swiper-button-next, .swiper-button-prev {
+      display: none;
+  }
+
+  .swiper-pagination {
+      display: none;
+  }
+}

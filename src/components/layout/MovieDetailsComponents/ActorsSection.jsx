@@ -37,7 +37,8 @@ const ActorsSection = ({ actors }) => {
                 loop={true}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
-            >
+                className='swiper-Actors'>
+
                 <div className="actors-content">
                     {actors?.cast?.map(actor => (
                         <SwiperSlide key={actor.id} className="actors-card">

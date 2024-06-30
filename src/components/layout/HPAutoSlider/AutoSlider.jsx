@@ -65,8 +65,8 @@ const AutoSlider = () => {
                         }} */
                         loop={true}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
-                        modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                    >
+                        modules={[EffectFade, Navigation, Pagination, Autoplay]}>
+
                         {trendingMovies.map((movie) => (
                             <SwiperSlide key={movie.id}>
                                 <div className="HomePg-BgPoster">

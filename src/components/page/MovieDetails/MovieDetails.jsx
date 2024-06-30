@@ -24,8 +24,10 @@ import MenuWatch from "../../../assets/icons/icon-menu.png"
 import Xclose from "../../../assets/icons/icon-cancelPic.png"
 import StrmIcon from "../../../assets/icons/icon-hboMax.png"
 import WhereToWatch from '../../layout/ModalWhereToWatch/WhereToWatch';
-import AvatarDefaultImg from "../../../assets/pictures/avatar-profile.jpg"
-import Remove from "../../../assets/icons/icons-remove.png"
+
+/* icon */
+import { MdFavoriteBorder } from "react-icons/md";
+import { FiPlusCircle } from "react-icons/fi";
 
 
 
@@ -36,21 +38,25 @@ import ReleaseDetails from '../../layout/ReleaseDetails/ReleaseDetails';
 import TimeRating from '../../layout/TimeRating/TimeRating';
 import TitleName from '../../layout/TitleName/TitleName';
 import ActorsSection from '../../layout/MovieDetailsComponents/ActorsSection';
+import ReviewsSection from '../../layout/MovieDetailsComponents/ReviewsSection';
+import VideoOfMovieSection from '../../layout/MovieDetailsComponents/VideoOfMovieSection';
+import MoviePictures from '../../layout/MovieDetailsComponents/MoviePictures';
+import Recommendation from '../../layout/MovieDetailsComponents/Recommendation';
 
 
 
 const MovieDetails = () => {
 
-    const ActorSlider = {
+    const RecommendationsOfMovie = {
         320: { slidesPerView: 1, spaceBetween: 10, },
         330: { slidesPerView: 1, spaceBetween: 10, },
         340: { slidesPerView: 1, spaceBetween: 10, },
         350: { slidesPerView: 1, spaceBetween: 10, },
         370: { slidesPerView: 1, spaceBetween: 10, },
         660: { slidesPerView: 2, spaceBetween: 10, },
-        960: { slidesPerView: 3, spaceBetween: 10, },
+        960: { slidesPerView: 4, spaceBetween: 10, },
         1260: { slidesPerView: 4, spaceBetween: 10, },
-        1600: { slidesPerView: 5, spaceBetween: 10, },
+        1600: { slidesPerView: 4, spaceBetween: 10, },
     };
 
     const breakpoints = {
@@ -97,7 +103,12 @@ const MovieDetails = () => {
     const [watchProviders, setWatchProviders] = useState(null);
     /* fetch   actors */
     const [actors, setActors] = useState(null);
-
+    /* fetch  video from movie */
+    const [videosOfMovie, setVideosOfMovie] = useState([]);
+    /* fetch  images in movie */
+    const [moviePicture, setPicturesOfMovie] = useState([]);
+    /* fetch  recommendations*/
+    const [recommendations, setRecommendations] = useState([]);
 
 
     useEffect(() => {
@@ -107,14 +118,36 @@ const MovieDetails = () => {
             setMovieDetails(json);
             console.log(json)
         }
+
         async function fetchMovieActors() {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=d0e15d3cd703e39934833d9dc348e907`);
             const json = await response.json();
             setActors(json);
         }
 
+        async function fetchVideosOfMovie() {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=d0e15d3cd703e39934833d9dc348e907`);
+            const json = await response.json();
+            setVideosOfMovie(json);
+        }
+
+        async function fetchPicturesOfMovie() {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/images?api_key=d0e15d3cd703e39934833d9dc348e907`);
+            const json = await response.json();
+            setPicturesOfMovie(json);
+        }
+
+        async function fetchMovieRecommendations() {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=d0e15d3cd703e39934833d9dc348e907`);
+            const json = await response.json();
+            setRecommendations(json.results);
+        }
+
         fetchMovieDetails();
-        fetchMovieActors()
+        fetchMovieActors();
+        fetchVideosOfMovie();
+        fetchPicturesOfMovie();
+        fetchMovieRecommendations()
     }, [params.id])
 
 
@@ -196,39 +229,21 @@ const MovieDetails = () => {
 
                 <main className='MovieDetails-otherInfo'>
                     {/* movie REVIEWS */}
-                    <section className='section-Reviews'>
-                        <h1 className='title-Reviews'>Reviews (18)</h1>
-                        <div className="content-Reviews">
-                            {/* pocetak kart reviwes */}
-                            <div className="main-Review">
-                                <div className="inner-Review">
-                                    <div className="innerLeft-Review">
-                                        <img src={AvatarDefaultImg} alt="" className="icon-Review" />
-                                    </div>
-                                    <div className="innerRight-Review">
-                                        <div className="innerRight-ReviewTop">
-                                            <div className="innerRight-ReviewButon">
-                                                <p>Joe</p>
-                                                <p>08-02-2024 21:01:56</p>
-                                            </div>
-                                            <div className="innerRight-ReviewButon">
-                                                <button className='ReviewButon'> <img src={Remove} className='ReviewButon-icon' alt="" />Remove</button>
-                                            </div>
-                                        </div>
-                                        <div className="innerRight-ReviewBoton">
-                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, ducimus ab consequatur omnis optio voluptatibus nobis fuga in officia. Facere ad est obcaecati animi! Maiores recusandae a, eaque nostrum ab similique porro! Iste ullam quae consequuntur expedita impedit veniam repellendus libero doloribus fugit. Repudiandae amet ad cupiditate eos deserunt! Fugit?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* KRAj kart reviwes */}
-                        </div>
-                    </section>
-                    {/* movie REVIEWS */}
+                    <ReviewsSection />
+
+                    {/* actors slider */}
                     <ActorsSection actors={actors} />
+
+                    {/* video iz filma */}
+                    <VideoOfMovieSection videosOfMovie={videosOfMovie} />
+
+                    {/* slike u filmu */}
+                    <MoviePictures moviePicture={moviePicture} />
+
+                    {/* Recommendations */}
+                    <Recommendation recommendations={recommendations} />
+
                 </main>
-
-
             </section >
         </>
     )

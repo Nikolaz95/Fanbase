@@ -1,8 +1,6 @@
 
 
 /* swiper style */
-
-
 .swiper-pagination-custom{
     top: 10px;
   }
@@ -20,10 +18,10 @@
   }
   
   .swiper-homeContent {
-    /* background-color: rgb(189, 238, 93); */
+    background-color: rgb(189, 238, 93);
     height: 520px;
   }
-  
+
   
   
   /* strelice  */
@@ -83,7 +81,7 @@
    }
    
    
-       /* card conteiner */
+  /* card conteiner */
    
    .conteiner-card {
    display: flex;

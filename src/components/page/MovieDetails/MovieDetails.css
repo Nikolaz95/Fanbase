@@ -80,76 +80,95 @@
     gap: 20px;
 }
 
-/* reviews  */
-
-.section-Reviews {
-    padding: 20px;
+.MovieDetails-otherInfo {
+    margin-top: 10px;
 }
 
-.title-Reviews {
-    padding-bottom: 10px;
-}
 
-.content-Reviews {
+/* recommendation */
+
+.recommendation-card {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    border-radius: 20px;
     gap: 10px;
 }
 
-.main-Review {
+/* card conteiner */
+   
+    
+    .kartica {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 223px;
+    /* border: 1px solid black; */
+    }
+    
+    .poster {
+    border-radius: 20px;
+    cursor: pointer;
     width: 100%;
-    border: 1px solid black;
-    padding: 20px;
-}
-
-.inner-Review {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; 
-    border: 1px solid black; /* izbrisat poslije */
-}
-
-.icon-Review {
-   display: flex;
-
-   border-radius: 20px;
-    width: 80px;
-    height: 80px;
-}
-
-.innerRight-Review {
+    height: 330px;
+    }
+      
+    .botom-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
-}
-
-.innerRight-ReviewTop {
+    }
+    
+    .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+      
+    .card-title {
+    text-align: center;
+    }
+      
+    .btn-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    }
+      
+    button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    }
+      
+    button, .icon-favorit, .icon-add {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
-    justify-content: space-between;
-    padding: 20px;
-}
+    align-items: center;
+    gap: 10px;
+    }
+      
+    .icon-favorit {
+     width: 20px;
+     height: 20px;
+    cursor: pointer;
+    }
+      
+    .icon-add {
+     width: 20px;
+     height: 20px;
+    cursor: pointer;
+    }
 
 
-.innerRight-ReviewBoton {
-    border: 1px solid black;
-    padding: 10px;
-    width: 90%;
-}
-
-.ReviewButon {
-    background-color: red;
-    color: white;
-}
-
-.ReviewButon-icon {
-    width: 30px;
-    height: 30px;
-}
-
-/* review */
 
 @media only screen and (max-width: 768px) {
     .MovieDetails-PosterContent {

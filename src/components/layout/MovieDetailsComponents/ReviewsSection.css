@@ -1,0 +1,80 @@
+
+
+/* reviews  */
+
+.section-Reviews {
+    padding: 20px;
+}
+
+.title-Reviews {
+    margin-bottom: 10px;
+}
+
+.main-Review {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    border: 1px solid black;
+}
+
+.inner-Review {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    padding: 5px;
+    border: 1px solid black; /* izbrisat poslije */
+}
+
+.icon-Review {
+   display: flex;
+   border-radius: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.innerRight-Review {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.innerRight-ReviewTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+
+.innerRight-ReviewBoton {
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+}
+
+.ReviewButon {
+    background-color: red;
+    color: white;
+}
+
+.ReviewButon-icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+@media only screen and (max-width: 320px) {
+    .section-Reviews {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* review */

@@ -97,7 +97,6 @@ const UpcomingMovieSliders = () => {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </SwiperSlide>
                     ))}
