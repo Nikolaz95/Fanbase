@@ -59,7 +59,7 @@ const TopRatedMoviesSlider = () => {
 
             <div className="contentUnder-title">
                 <h1>Top Rated Movies:</h1>
-                <NavLink to="#">
+                <NavLink to="/movies?category=toprated">
                     <span className='VievAll'>View All :</span>
                 </NavLink>
             </div>

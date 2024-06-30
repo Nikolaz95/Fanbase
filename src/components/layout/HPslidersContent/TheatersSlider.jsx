@@ -73,7 +73,7 @@ const TheatersSlider = () => {
 
             <div className="contentUnder-title">
                 <h1>Now playing in Theatres :</h1>
-                <NavLink to="#">
+                <NavLink to="/movies?category=theaters">
                     <span className='VievAll'>View All :</span>
                 </NavLink>
             </div>

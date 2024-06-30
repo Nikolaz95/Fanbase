@@ -60,7 +60,7 @@ const UpcomingMovieSliders = () => {
 
             <div className="contentUnder-title">
                 <h1>Upcoming Movies:</h1>
-                <NavLink to="#">
+                <NavLink to="/movies?category=upcoming">
                     <span className='VievAll'>View All :</span>
                 </NavLink>
             </div>
