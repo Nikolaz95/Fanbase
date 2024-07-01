@@ -11,6 +11,11 @@ import MovieDetails from './components/page/MovieDetails/MovieDetails.jsx';
 import SingIn from './components/page/SingIn/SingIn.jsx';
 import Register from './components/page/Registration/Register.jsx';
 import ProfileAccount from './components/page/UserAccount/ProfileAccount.jsx';
+import WatchListAccount from './components/page/UserAccount/WatchListAccount.jsx';
+import FavoritListAccount from './components/page/UserAccount/FavoritListAccount.jsx';
+import RatingListAccount from './components/page/UserAccount/RatingListAccount.jsx';
+import ActorFavoritAccount from './components/page/UserAccount/ActorFavoritAccount.jsx';
+import SettingsProfileAccount from './components/page/UserAccount/SettingsProfileAccount.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,9 +52,41 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/user/watchList",
+        element:
+          <WatchListAccount />
+      },
+
+      {
+        path: "/user/favoritList",
+        element:
+          <FavoritListAccount />
+      },
+
+      {
+        path: "/user/ratingList",
+        element: <RatingListAccount />
+      },
+      {
+        path: "/user/favoritActor",
+        element:
+          <ActorFavoritAccount />
+      },
+
+      {
+        path: "/user/settings",
+        element:
+          <SettingsProfileAccount />
+      },
+
+
+      /* profile Account */
+
+      {
         path: "*",
         element: <ErrorPage />
       },
+
     ]
   }
 ])

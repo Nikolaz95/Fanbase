@@ -12,7 +12,7 @@ a {
     text-decoration: none ;
 }
 
-.navbar  {
+.navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,24 +24,33 @@ a {
     gap: 20px;
     list-style: none;
     align-items: center;
-
     /* border: 1px solid black; */
 }
 
+.navbar li{
+  display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+  /* border: 1px solid black; */
+}
+
+
 .navbar li .active{
-   /*  border: 1px solid black; */
-    border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    /* padding: 15px; */
-    font-weight: bold;
-    cursor: pointer;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  /*  border: 1px solid black; */
 }
 
 
 .navbar ul li .active {
   background: linear-gradient(to right,#c0fecf 0,#1ed5a9 100%);
   font-weight: bold;
-  padding: 15px;
+  padding: 10px;
 }
 
 .navbar ul li a:not(.active):hover {
@@ -56,8 +65,6 @@ a {
     gap: 10px;
 }
 
-
-
 .icon-navigation {
     width: 30px;
     height: 30px;
@@ -65,15 +72,268 @@ a {
 }
 
 
+/*ham-menu nav bar mobile */
+
+
+.ham-menu {
+  display: none;
+}
+
+
+/* user link content */
+
+.userContentNavbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-User  {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+/* dropdown user logIn*/
+
+.UserNavbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.userIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.dropDownUser-content {
+  background-color: #1ed5a9;
+  position: absolute;
+  border-radius: 20px;
+  gap: 20px;
+  top: 125px;
+  right: 5px;
+  z-index: 1000;
+  width: 200px;
+}
+
+.dropDownUser-content a {
+  border: 1px solid black;
+}
+
+.dropDownUser-content ul  {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+.dropDownUser-content .dropDownUser-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+
+}
+
+.dropDownUser-mainSection {
+  position: relative;
+  top: 0;
+}
+
+
+/* arrows animated */
+
+.arrowDrpUser {
+  transition:  0.5s;
+}
+
+.rotatedArrowUser {
+  transform: rotate(90deg);
+}
+
+/* dropdown USer */
+
+.dropDownUser ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  width: 199px;
+  top: 126px;
+  right: 5px;
+  height: 250px;
+  z-index: 100000;
+}
+
+.dropDownUser ul a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0px 10px 0px 10px;
+}
+
+
+.dropDownUser .dropDownUser-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}
+
+.dropDownUser-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.arrowDrpUser {
+  transition:  0.5s;
+}
+
+.rotatedArrowUser {
+  transform: rotate(90deg);
+}
+
+
+
+/* dropdownUSer style kraj */
 
 
 
 @media only screen and (max-width: 1000px) {
-    .searchBar-container {
-        display: none;
-      }
+.searchBar-container {
+display: none;
+}
 
-    .navbar {
-      display: none;
-    } 
+
+.navbar {
+display: none;
+} 
+
+
+/* sidebar */
+/* ham menu mob */
+.ham-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor:pointer;
+  padding: 4px;
+  color:#ffffff; 
+}
+
+.bar1, .bar2, .bar3{  
+  display:flex;  
+  width:50px;  
+  height:5px;  
+  margin:5px auto;  
+  background-color:#ffffff;  
+  transition: 0.4s;  
+}
+
+/* ham menu mob  animacija strelica*/
+.ham-menu {  
+  display:block;  
+ }
+
+ .ham-menu.active .bar1 {  
+  transform: rotate(45deg) translate(8px,3px);  
+ }  
+ .ham-menu.active .bar2 {  
+  opacity: 0;  
+ }  
+ .ham-menu.active .bar3 {  
+  transform: rotate(-45deg) translate(8px,-3px);  
+ }
+
+
+
+
+
+
+
+/* sidebar active */
+body.sidebar-active {
+  overflow-y: hidden;
+}
+
+.navbar.active {
+  display: flex;
+  top: 125px;
+  right: 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(13.8px);
+  flex-direction: column;
+  height: 100%;
+  width: 65%;
+  position: fixed;
+  align-items: center;
+  overflow-y: auto;
+  z-index: 10000000;
+}
+
+.navbar.active ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+
+.navbar.active li {
+  display: flex;
+  flex-direction: column;
+}
+
+.UserNavbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar li{
+  display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+  /* border: 1px solid black; */
+}
+
+.dropDownUser ul {
+  justify-content: space-between;
+  position: relative;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1;
+}
+
+
 }

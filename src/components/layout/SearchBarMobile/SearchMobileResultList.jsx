@@ -15,16 +15,17 @@ const SearchMobileResultList = ({ searchResults }) => {
                     <div className="searchBarMobile-searchResult">
                         <ul >
                             {searchResults.map((result) => (
-                                <li key={result.id}>
-                                    <NavLink to={`/movies/${result.id}`}>
+                                <NavLink to={`/movies/${result.id}`}>
+                                    <li key={result.id}>
                                         <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} className='searchBarMobile-contentImg' />
-                                    </NavLink>
-                                    <div className="searchBarMobile-resultContenta">
-                                        <p>{result.title}</p>
-                                        <p>{result.vote_average}</p>
-                                        <p>{result.release_date ? result.release_date.split('-')[0] : 'N/A'}</p>
-                                    </div>
-                                </li>
+                                        {/* </NavLink> */}
+                                        <div className="searchBarMobile-resultContenta">
+                                            <p>{result.title}</p>
+                                            <p>{result.vote_average}</p>
+                                            <p>{result.release_date ? result.release_date.split('-')[0] : 'N/A'}</p>
+                                        </div>
+                                    </li>
+                                </NavLink>
                             ))}
                         </ul>
                     </div>

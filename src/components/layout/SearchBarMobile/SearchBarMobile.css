@@ -41,6 +41,14 @@
     outline: none;
   }
 
+  .searchBarMobile-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+  }
+
   @media only screen and (max-width: 1000px) {
     .searchBarMobile-container {
       width: 100%;

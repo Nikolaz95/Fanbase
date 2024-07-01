@@ -1,14 +1,14 @@
 
 
-.section-recommendations {
+
+
+.title-recommendations {
     padding: 20px;
 }
 
-
-
 /* swiper content actors */
 .swiper-Recommendation {
-    /* background-color: yellowgreen; */
+    background-color: yellowgreen;
     height: 520px;
 }
 

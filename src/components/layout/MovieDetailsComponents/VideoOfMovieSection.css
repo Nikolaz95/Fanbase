@@ -2,9 +2,9 @@
 
 /* css video */
 
-.section-videosOfMovie {
+.title-videosOfMovie {
     padding: 20px;
-}
+  }
 
 .content-videosOfMovie {
     display: flex;
@@ -24,8 +24,8 @@
 
 /* swiper content actors */
 .swiper-TrailsMovie {
-    /* background-color: rgb(30, 33, 207); */
-    height: 530px;
+    background-color: rgb(30, 33, 207);
+    height: 560px;
 }
 
 .swiper-TrailsMovie .swiper-button-next, .swiper-button-prev{

@@ -1,18 +1,12 @@
 
 
 /* style za info od filma */
-
-.section-Actors {
-    padding: 20px;
-}
-
-
 /* stile za actors */
 /* actors */
 
-.actors {
-    padding: 20px;
-    }
+.title-actors {
+  padding: 20px;
+}
   
   
     .actors-content {

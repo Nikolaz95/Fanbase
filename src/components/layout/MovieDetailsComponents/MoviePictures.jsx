@@ -39,6 +39,7 @@ const MoviePictures = ({ moviePicture }) => {
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
                 className='swiper-PicturesMovie'>
+
                 <div className="content-pitcutreOfMovie">
                     {moviePicture?.backdrops?.map(pictures => (
                         <SwiperSlide key={pictures.id} /* className="pictures-card" */>

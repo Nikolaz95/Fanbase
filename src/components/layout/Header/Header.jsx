@@ -15,24 +15,44 @@ import SearchBarMobile from '../SearchBarMobile/SearchBarMobile';
 
 
 const Header = () => {
+    const [isLogoVisible, setIsLogoVisible] = useState(true);
+    const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
+    const toggleSideMenu = () => {
+        setIsSideMenuOpen((prevSideMenuOpen) => !prevSideMenuOpen);
+    }
+
+    const handleSearchToggle = (isActive) => {
+        setIsLogoVisible(!isActive);
+    };
 
     return (
         <header>
             <div className="content-header">
-                <NavLink href="/" className="no-underline">
-                    <img src={Logo} className="logo " alt="here should be a picture" />
-                </NavLink>
+                {isLogoVisible && (
+                    <NavLink to="/" className="no-underline">
+                        <img src={Logo} className="logo" alt="Logo" />
+                    </NavLink>
+                )}
                 <>
                     <SearchBar />
                 </>
 
                 <>
-                    <SearchBarMobile />
+                    <SearchBarMobile
+                        onSearchToggle={handleSearchToggle}
+                    />
                 </>
 
                 <>
-                    <NavBar />
+                    <NavBar isSideMenuOpen={isSideMenuOpen} setIsSideMenuOpen={setIsSideMenuOpen} />
                 </>
+
+                <div onClick={toggleSideMenu} className={`ham-menu ${isSideMenuOpen === true ? "active" : null} ${isSideMenuOpen === false ? "close" : null}`}>
+                    <span className="bar1"></span>
+                    <span className="bar2"></span>
+                    <span className="bar3"></span>
+                </div>
             </div>
         </header>
     )

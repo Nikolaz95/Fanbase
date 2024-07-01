@@ -5,8 +5,13 @@
 /* css slike */
 
 .section-pitcutreOfMovie {
+    /* padding: 20px; */
+}
+
+.title-pitcutreOfMovie {
     padding: 20px;
 }
+
 
 .content-pitcutreOfMovie {
     display: flex;
@@ -35,8 +40,8 @@
 
 @media only screen and (max-width: 425px) {
     .swiper-PicturesMovie {
-        /* background-color: rgb(50, 71, 205); */
-        height: 420px;
+        background-color: rgb(50, 71, 205);
+        height: 520px;
     }
     .swiper-button-next, .swiper-button-prev {
         display: none;

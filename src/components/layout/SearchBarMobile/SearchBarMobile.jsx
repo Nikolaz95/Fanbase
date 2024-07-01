@@ -1,19 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import Search from "../../../assets/icons/icon-search.png";
+import CloseSearch from "../../../assets/icons/icon-cancelPic.png";
+
 
 //import css
 import "../../layout/SearchBarMobile/SearchBarMobile.css";
 import SearchMobileResultList from './SearchMobileResultList';
 
-const SearchBarMobile = () => {
+const SearchBarMobile = ({ onSearchToggle }) => {
     const [searchValue, setSearchValue] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isSearchActive, setIsSearchActive] = useState(false);
-    const searchRef = useRef(null);
+    const [showInput, setShowInput] = useState(false);
 
+    const searchRef = useRef(null);
     const apiKey = 'd0e15d3cd703e39934833d9dc348e907';
     const apiUrlMovie = 'https://api.themoviedb.org/3/search/movie';
+
+    const onClickShowInput = () => {
+        setShowInput((prevShowInput) => !prevShowInput);
+        if (showInput) {
+            setIsSearchActive(false);
+            setSearchValue('');
+            onSearchToggle(false); // Notify parent to show logo
+        } else {
+            onSearchToggle(true); // Notify parent to hide logo
+        }
+    };
 
     /* fetch */
     useEffect(() => {
@@ -21,6 +35,7 @@ const SearchBarMobile = () => {
         console.log('API URL:', apiUrlMovie);
         console.log('API Key:', apiKey);
         console.log('Search:', searchValue);
+
         const searchMovies = async () => {
             try {
                 const response = await fetch(`${apiUrlMovie}?api_key=${apiKey}&query=${searchValue}`);
@@ -61,16 +76,22 @@ const SearchBarMobile = () => {
             <div className="searchBarMobile-wrapper" ref={searchRef}>
                 <div className="searchBarMobile-content">
                     <form className="searchBarMobile-form">
-                        <input
-                            className='searchBarMobile-input'
-                            type="text"
-                            placeholder='Search for the Movies, TvShow, Actors...'
-                            value={searchValue}
-                            onFocus={() => setIsSearchActive(true)}
-                            onChange={(e) => setSearchValue(e.target.value)}
-                        />
+                        {showInput && (
+                            <input
+                                className='searchBarMobile-input'
+                                type="text"
+                                placeholder='Search for the Movies, TvShow, Actors...'
+                                value={searchValue}
+                                onFocus={() => setIsSearchActive(true)}
+                                onChange={(e) => setSearchValue(e.target.value)} />
+                        )}
                     </form>
-                    <img src={Search} height={30} width={30} alt="" className="searchBarMobile-icon" />
+                    <img
+                        src={showInput ? CloseSearch : Search}
+                        onClick={onClickShowInput}
+                        alt=""
+                        className="searchBarMobile-icon"
+                    />
                 </div>
                 {isSearchActive && searchValue && (
                     <SearchMobileResultList searchResults={searchResults}

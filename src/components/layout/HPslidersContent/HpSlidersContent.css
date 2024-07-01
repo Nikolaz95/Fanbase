@@ -56,12 +56,9 @@
 
 
 
-  .HomePg-contentUnder {
-    padding: 20px;
-   }
    
-   
-   .contentUnder-title {
+  
+.contentUnder-title {
      display: flex;
      justify-content: space-between;
      align-items: center;

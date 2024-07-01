@@ -14,16 +14,16 @@ const SearchResultsList = ({ searchResults }) => {
                     <div className="search-result">
                         <ul>
                             {searchResults.map((result) => (
-                                <li key={result.id}>
-                                    <NavLink to={`/movies/${result.id}`}>
-                                        <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} width={100} height={100} alt={result.title} />
-                                    </NavLink>
-                                    <div className="search-resultContenta">
-                                        <p>{result.title}</p>
-                                        <p>{result.vote_average}</p>
-                                        <p>{result.release_date ? result.release_date.split('-')[0] : 'N/A'}</p>
-                                    </div>
-                                </li>
+                                <NavLink key={result.id} to={`/movies/${result.id}`} className="search-resultItem">
+                                    <li>
+                                        <img src={result.poster_path ? `https://image.tmdb.org/t/p/w200${result.poster_path}` : noImg} width={100} height={100} alt={result.title} title={result.title} />
+                                        <div className="search-resultContenta">
+                                            <p>{result.title}</p>
+                                            <p>{result.vote_average}</p>
+                                            <p>{result.release_date ? result.release_date.split('-')[0] : 'N/A'}</p>
+                                        </div>
+                                    </li>
+                                </NavLink>
                             ))}
                         </ul>
                     </div>
@@ -31,7 +31,7 @@ const SearchResultsList = ({ searchResults }) => {
             ) : (
                 <div className="no-results">
                     <ul>
-                        <li >
+                        <li>
                             <img src={noImg} width={100} height={100} alt="" />
                             <div className="noresults-Contenta">
                                 <p>No results found</p>
