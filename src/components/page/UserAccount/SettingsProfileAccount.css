@@ -1,0 +1,56 @@
+
+
+/* settings conten style */
+.settingsMain-mainContent {
+    padding: 10px;
+}
+
+.settingsMain-Content {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 20px;
+    border: 1px solid black;
+    height: 550px;
+}
+
+/* settings conten MAIN style */
+
+
+
+/* style Profile Info */
+.setting-conteinerProfileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.setting-contentProfileInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-profileImg {
+    width: 200px;
+    height: 250px;
+}
+
+.setting-profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+/* za mobitel */
+
+@media only screen and (max-width: 425px) {
+    .settingsMain-Content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        height: 100%;
+        align-content: center;
+    }
+}

@@ -1,17 +1,190 @@
 import React from 'react'
 import TabNavAccount from '../../layout/TabNavigationAccount/TabNavAccount'
 
+
+//import img
+import Actor from "../../../assets/pictures/Tom-Cruise.jpg"
+import Poster1 from "../../../assets/pictures/poster.jpg"
+import AddWatchList from "../../../assets/icons/icon-add.png"
+import AddFavorit from "../../../assets/icons/icon-check.png"
+import Remove from "../../../assets/icons/icon-cancelPic.png"
+
 const RatingListAccount = () => {
     return (
         <div>
-            <div className="content-WatchList">
-                <div className="head-WatchList">
+            <div className="main-contentProfile">
+                <div className="head-AcoutProfile">
                     <h1>Your Favorit List</h1>
                     <span className='notfi-WatchList'>2</span>
                 </div>
                 <div className="tabs-contentProfile">
                     <TabNavAccount />
                 </div>
+
+                {/* content  favoritList*/}
+                <main className='MovieWatFavlist-mainSection'>
+                    <div className='MovieWatFavlist-content'>
+                        <ul>
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+
+
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+
+
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+
+
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+
+
+                            <li className='MovieWatFavlist-contentList'>
+                                <div className="MovieWatFavlist-posterBox">
+                                    <img src={Poster1} alt="" className='MovieWatFavlist-img' />
+                                </div>
+                                <div className="MovieWatFavlist-details">
+                                    <h3>Backt To the Future</h3>
+                                    <p>Your Rating:</p>
+                                    <p>4.5</p>
+                                </div>
+
+                                <div className="MovieWatFavlist-btns">
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Watchlist
+                                    </button>
+                                    <button>
+                                        <img src={AddWatchList} width={20} height={20} alt="" />
+                                        Add to Favorites
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </main>
             </div>
         </div>
     )

@@ -54,46 +54,52 @@ const TabNavAccount = () => {
             <div className="tabs-navigation">
 
                 <ul className='navbar-content'>
-                    <li className={activeTab === 'Profile' ? 'active' : ''}>
+                    {/* <li className={activeTab === 'Profile' ? 'active' : ''}>
                         <NavLink to="/user/profile" onClick={() => handleTabClick('Profile')} >
                             <span className='icon'><img src={Profile} height={30} alt="" /></span>
                             <span className='text'>Profile</span>
+                        </NavLink>
+                    </li> */}
+                    <li className={activeTab === 'Settings' ? 'active' : ''}>
+                        <NavLink to="/user/settings-Profile" onClick={() => handleTabClick('Settings')}>
+                            <span className='icon'><img src={Settings} height={30} alt="" /></span>
+                            <span className='text'>Settings</span>
                         </NavLink>
                     </li>
                     <li className={activeTab === 'YourWatchList' ? 'active' : ''}>
                         <NavLink to="/user/watchList" onClick={() => handleTabClick('YourWatchList')} >
                             <span className='icon'><img src={AddWatchList} height={30} alt="" /></span>
                             <span className='text'>Your Watch List</span>
-                            <span className='notification'>2</span>
+                            <span className='notification'>0</span>
                         </NavLink>
                     </li>
                     <li className={activeTab === 'YourFavoritList' ? 'active' : ''}>
                         <NavLink to="/user/favoritList" onClick={() => handleTabClick('YourFavoritList')}>
                             <span className='icon'><img src={AddFavorit} height={30} alt="" /></span>
                             <span className='text'>Your Favorit List</span>
-                            <span className='notification'>2</span>
+                            <span className='notification'>0</span>
                         </NavLink>
                     </li>
                     <li className={activeTab === 'YourRatings' ? 'active' : ''}>
                         <NavLink to="/user/ratingList" onClick={() => handleTabClick('YourRatings')}>
                             <span className='icon'><img src={Rating} height={30} alt="" /></span>
                             <span className='text'>Your Ratings</span>
-                            <span className='notification'>2</span>
+                            <span className='notification'>0</span>
                         </NavLink>
                     </li>
                     <li className={activeTab === 'FavoritActor' ? 'active' : ''}>
                         <NavLink to="/user/favoritActor" onClick={() => handleTabClick('FavoritActor')}>
                             <span className='icon'><img src={ActorFavorit} height={30} alt="" /></span>
                             <span className='text'>Favorit Actor</span>
-                            <span className='notification'>2</span>
+                            <span className='notification'>0</span>
                         </NavLink>
                     </li>
-                    <li className={activeTab === 'Settings' ? 'active' : ''}>
-                        <NavLink to="/user/settings" onClick={() => handleTabClick('Settings')}>
+                    {/* <li className={activeTab === 'Settings' ? 'active' : ''}>
+                        <NavLink to="/user/settings-Profile" onClick={() => handleTabClick('Settings')}>
                             <span className='icon'><img src={Settings} height={30} alt="" /></span>
                             <span className='text'>Settings</span>
                         </NavLink>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
 

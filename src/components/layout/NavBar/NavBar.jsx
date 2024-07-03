@@ -36,13 +36,13 @@ const NavBar = ({ isSideMenuOpen }) => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/z<cxsad" className='navigation-style'>
+                    <NavLink to="/z<cxsad" className='navigation-style disabled-link' title='Coming Soon' >
                         TV Shows
                         <img src={TvShows} alt="" className="icon-navigation" />
                     </NavLink>
                 </li>
                 {/* user log in nav link i dropdown */}
-                <li onClick={() => setShowDropdownUserNav(!showDropdownUserNav)} >
+                {/* <li onClick={() => setShowDropdownUserNav(!showDropdownUserNav)} >
                     <div className="UserNavbar">
                         <figure>
                             <img src={AvatarDefoult} className="userIcon" />
@@ -78,7 +78,7 @@ const NavBar = ({ isSideMenuOpen }) => {
                         </div>
                     )}
 
-                </li>
+                </li> */}
                 {/* user log in nav link i dropdown */}
                 <li>
                     <NavLink to="/singIn" className='navigation-style'>

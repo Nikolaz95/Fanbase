@@ -16,6 +16,10 @@ import FavoritListAccount from './components/page/UserAccount/FavoritListAccount
 import RatingListAccount from './components/page/UserAccount/RatingListAccount.jsx';
 import ActorFavoritAccount from './components/page/UserAccount/ActorFavoritAccount.jsx';
 import SettingsProfileAccount from './components/page/UserAccount/SettingsProfileAccount.jsx';
+import SettingsUpdateProfile from './components/page/UserAccount/SettingsUpdateProfile.jsx';
+import UploadPicture from './components/page/UserAccount/UploadPicture.jsx';
+import UpdatePassword from './components/page/UserAccount/UpdatePassword.jsx';
+import DeleteAccount from './components/page/UserAccount/DeleteAccount.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +48,7 @@ const router = createBrowserRouter([
         path: "/registration",
         element: <Register />
       },
+
       /* profile Account */
 
       {
@@ -74,9 +79,33 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/user/settings",
+        path: "/user/settings-Profile",
         element:
           <SettingsProfileAccount />
+      },
+
+      {
+        path: "/user/settings-ProfileUpdate",
+        element:
+          <SettingsUpdateProfile />
+      },
+
+      {
+        path: "/user/settings-UploadPicture",
+        element:
+          <UploadPicture />
+      },
+
+      {
+        path: "/user/settings-UpdatePassword",
+        element:
+          <UpdatePassword />
+      },
+
+      {
+        path: "/user/settings-DeleteAccount",
+        element:
+          <DeleteAccount />
       },
 
 
