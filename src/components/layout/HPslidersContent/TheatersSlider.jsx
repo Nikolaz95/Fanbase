@@ -111,14 +111,11 @@ const TheatersSlider = () => {
                                         </p>
                                         {/*btns-Content je u hpslider.css  */}
                                         <div className="btns-Content">
-
                                             <BtnAddWatchList />
-
                                             <BtnsAddFavList />
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </SwiperSlide>
                     ))}

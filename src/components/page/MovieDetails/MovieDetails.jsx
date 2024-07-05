@@ -12,23 +12,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-//import img
-import PosterMovie from "../../../assets/pictures/poster2.jpg"
-import BgPosterMovie from "../../../assets/pictures/bg-poster2.jpg"
-import Mising from "../../../assets/pictures/mising-pic.jpg"
-import AddWatchList from "../../../assets/icons/icon-add.png"
-import IsOnWatchList from "../../../assets/icons/icon-check.png"
-import AddFavoritList from "../../../assets/icons/not-favoritIcon.png"
-import AddFavoritList2 from "../../../assets/icons/icon-like.png"
-import MenuWatch from "../../../assets/icons/icon-menu.png"
-import Xclose from "../../../assets/icons/icon-cancelPic.png"
-import StrmIcon from "../../../assets/icons/icon-hboMax.png"
-import WhereToWatch from '../../layout/ModalWhereToWatch/WhereToWatch';
-
-/* icon */
-import { MdFavoriteBorder } from "react-icons/md";
-import { FiPlusCircle } from "react-icons/fi";
-
 
 
 //import components
@@ -48,29 +31,6 @@ import BtnsAddFavList from '../../layout/BtnAddFavList/BtnsAddFavList';
 
 
 const MovieDetails = () => {
-
-    const RecommendationsOfMovie = {
-        320: { slidesPerView: 1, spaceBetween: 10, },
-        330: { slidesPerView: 1, spaceBetween: 10, },
-        340: { slidesPerView: 1, spaceBetween: 10, },
-        350: { slidesPerView: 1, spaceBetween: 10, },
-        370: { slidesPerView: 1, spaceBetween: 10, },
-        660: { slidesPerView: 2, spaceBetween: 10, },
-        960: { slidesPerView: 4, spaceBetween: 10, },
-        1260: { slidesPerView: 4, spaceBetween: 10, },
-        1600: { slidesPerView: 4, spaceBetween: 10, },
-    };
-
-    const breakpoints = {
-        320: { slidesPerView: 1, spaceBetween: 10, },
-        340: { slidesPerView: 1, spaceBetween: 10, },
-        660: { slidesPerView: 2, spaceBetween: 10, },
-        960: { slidesPerView: 3, spaceBetween: 10, },
-        1260: { slidesPerView: 4, spaceBetween: 10, },
-        1600: { slidesPerView: 5, spaceBetween: 10, },
-    };
-
-
     //open/close modal
     const [openModal, setOpenModal] = useState(false)
     const menuRef = useRef(null);
@@ -140,8 +100,9 @@ const MovieDetails = () => {
         }
 
         async function fetchMovieRecommendations() {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=d0e15d3cd703e39934833d9dc348e907`);
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=d0e15d3cd703e39934833d9dc348e907`);
             const json = await response.json();
+            console.log('Fetched Recommendations:', json.results);
             setRecommendations(json.results);
         }
 
@@ -217,11 +178,8 @@ const MovieDetails = () => {
                         <UserRating />
                         {/* userRating */}
                         <div className="btns-Content">
-
                             <BtnAddWatchList />
-
                             <BtnsAddFavList />
-
                         </div>
                     </div>
                 </div>
@@ -240,6 +198,7 @@ const MovieDetails = () => {
                     <MoviePictures moviePicture={moviePicture} />
 
                     {/* Recommendations */}
+                    {/* <Recommendation /> */}
                     <Recommendation recommendations={recommendations} />
 
                 </main>

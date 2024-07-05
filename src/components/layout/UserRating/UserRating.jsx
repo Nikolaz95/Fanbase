@@ -11,6 +11,7 @@ const UserRating = () => {
     console.log("You rate movie with", ratingValue)
     return (
         <div className="usersRating">
+            <p>user Rating</p>
             <Rating
                 precision={0.5}
                 max={5}

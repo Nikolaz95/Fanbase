@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
@@ -12,14 +13,11 @@ import 'swiper/css/scrollbar';
 //import css
 import "./Recommendation.css"
 
-/* icon */
-import { MdFavoriteBorder } from "react-icons/md";
-import { FiPlusCircle } from "react-icons/fi";
-import AddWatchList from "../../../assets/icons/icon-add.png"
-import IsOnWatchList from "../../../assets/icons/icon-check.png"
-import AddFavoritList from "../../../assets/icons/not-favoritIcon.png"
-import AddFavoritList2 from "../../../assets/icons/icon-like.png"
-import { NavLink } from 'react-router-dom';
+//import components
+import BtnAddWatchList from '../BtnAddToWatchlist/BtnAddWatchList';
+import BtnsAddFavList from '../BtnAddFavList/BtnsAddFavList';
+
+
 
 const Recommendation = ({ recommendations }) => {
     const RecommendationsOfMovie = {
@@ -33,6 +31,8 @@ const Recommendation = ({ recommendations }) => {
         1260: { slidesPerView: 4, spaceBetween: 10, },
         1600: { slidesPerView: 4, spaceBetween: 10, },
     };
+
+
     return (
         <section className="section-recommendations">
             <h1 className="title-recommendations">Recommendations:</h1>
@@ -62,9 +62,10 @@ const Recommendation = ({ recommendations }) => {
                                         <div className="botom-card">
                                             <h3 className="card-title">{recommendation.title}</h3>
                                             <p className="card-rating">Rating: {recommendation.vote_average}</p>
-                                            <div className="btn-card">
-                                                <button className="add-to-watchlist">Add to Watchlist <FiPlusCircle className='icon-add' /></button>
-                                                <button className="add-to-favorites">Add to Favorites <MdFavoriteBorder className='icon-favorit' /></button>
+                                            {/*btns-Content je u hpslider.css  */}
+                                            <div className="btns-Content">
+                                                <BtnAddWatchList />
+                                                <BtnsAddFavList />
                                             </div>
                                         </div>
                                     </div>
