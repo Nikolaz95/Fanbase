@@ -6,7 +6,9 @@ import "./ReviewsSection.css"
 
 //import img
 import AvatarDefaultImg from "../../../assets/pictures/avatar-profile.jpg"
-import Remove from "../../../assets/icons/icons-remove.png"
+
+//import components
+import BtnRemove from '../BtnRemove/BtnRemove'
 
 const ReviewsSection = () => {
     return (
@@ -26,7 +28,11 @@ const ReviewsSection = () => {
                                     <p>08-02-2024 21:01:56</p>
                                 </div>
                                 <div className="innerRight-ReviewButon">
-                                    <button className='ReviewButon'> <img src={Remove} className='ReviewButon-icon' alt="" />Remove</button>
+                                    {/* <button className='ReviewButon'>
+                                        <img src={Remove} className='ReviewButon-icon' alt="" />
+                                        Remove
+                                    </button> */}
+                                    <BtnRemove />
                                 </div>
                             </div>
                             <div className="innerRight-ReviewBoton">
@@ -46,7 +52,7 @@ const ReviewsSection = () => {
                                     <p>08-02-2024 21:01:56</p>
                                 </div>
                                 <div className="innerRight-ReviewButon">
-                                    <button className='ReviewButon'> <img src={Remove} className='ReviewButon-icon' alt="" />Remove</button>
+                                    <BtnRemove />
                                 </div>
                             </div>
                             <div className="innerRight-ReviewBoton">

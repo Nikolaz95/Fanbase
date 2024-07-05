@@ -13,37 +13,24 @@ const SingIn = () => {
     return (
         <>
             <TitleName title={"Sing in"} />
-            <section className="registering-section">
+            <section className="singIn-section">
+                <h1 className='title-singIn'>Sign in</h1>
+                <div className="card-singIn">
 
-                <h1 className='title-registering'>Sign in</h1>
-                <div className="card-registering">
-
-                    <div className="lef-registering">
-                        <form className='form-registering' /* onSubmit={submitHandler} */>
+                    <div className="lef-singIn">
+                        <form className='form-singIn'>
                             <label htmlFor="mail">Your Email:</label>
-                            <input type="email" id='mail' placeholder='fake@email...'
-                            /* value={email} */
-                            /* onChange={(e) => setEmail(e.target.value)} */
-                            />
+                            <input type="email" id='mail' className='inputEmail' placeholder='fake@email...' />
 
 
                             <label htmlFor="pwd">Password :</label>
-                            <div className="pasword-content">
-                                <input /* type={showPassword ? "text" : "password"} id='pwd' placeholder='password...'
-                                    value={password} */
-                                /* onChange={(e) => setPassword(e.target.value)} */
-                                />
-                                {/* <img
-                                    title={showPassword ? "Hide password" : "Show password"}
-                                    src={showPassword ? Hide : Show}
-                                    onClick={() => setShowPassword(prevState => !prevState)}
-                                /> */}
+                            <div className="pasword-contentSingIn">
+                                <input type='text' id='pwd' className='inputPwd' placeholder='password...' />
                             </div>
 
-                            <div className="btn-login">
-                                <button type="submit" className="login" /* disabled={isLoading} */>
+                            <div className="btn-loginSingIn">
+                                <button type="submit" className="login">
                                     <p>Log in</p>
-                                    {/* {isLoading ? "Authenticating..." : "Log in"} */}
                                 </button>
                             </div>
                         </form>
@@ -62,7 +49,7 @@ const SingIn = () => {
 
                     </div>
 
-                    <div className="right-registering">
+                    <div className="right-singIn">
                         <h1 className="registering-title">Benefits of your free  account</h1>
                         <p>Personalized Recommendations</p>
 

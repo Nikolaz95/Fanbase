@@ -11,46 +11,38 @@ const Register = () => {
     return (
         <>
             <TitleName title={"Register"} />
-            <section className='cr-acc'>
+            <section className='section-createAccount'>
 
-                <h1 className='title-account'>Create Accunt</h1>
+                <h1 className='title-accounts'>Create Accunt</h1>
 
-                <div className="content-accountcard">
-                    <div className="account-card">
-                        <form className='form-registering' /* onSubmit={submitHandler} */>
+                <div className="content-registeringAccountCards">
+                    <div className="account-registeringCards">
+                        <form className='form-registering'>
                             <label htmlFor="name">Your Username:</label>
-                            <input type="text" name="name" placeholder='username...'
-                            /* value={name} */
-                            /* onChange={onChange} */
-                            />
-                            <br />
+                            <input type="text" name="name" id='name' className='inputUserName' placeholder='username...' />
 
                             <label htmlFor="mail">Your Emai:</label>
-                            <input type="email" name="email" id='mail' placeholder='fake@email.com'
-                            /* value={email} */
-                            /* onChange={onChange} */
-                            />
-                            <br />
+                            <input type="email" name="email" id='mail' className='inputEmail' placeholder='fake@email.com' />
 
                             <label htmlFor="pwd">Password :</label>
-                            <input type="password" name="password" id='pwd' placeholder='password...'
-                            /* value={password} */
-                            /* onChange={onChange} */
-                            />
+                            <input type="password" name="password" id='pwd' className='inputPwd' placeholder='password...' />
 
                             <div className="btn-login">
-                                <button className="create-accBtn" type="submit" /* disabled={isLoading} */>
-                                    {/* {isLoading ? "Creating..." : "Create your accunt"} */}
+                                <button className="create-accBtn" type="submit">
                                     Create your accunt
                                 </button>
                             </div>
                         </form>
                     </div>
-                    <p>You already have account ?</p>
+                    <div className="registerighaveAcc">
 
-                    <NavLink to="/singIn" className="singIn">
-                        <p>Sing In {/* <FaArrowRight className='arow-singin' /> */}</p>
-                    </NavLink>
+
+                        <p>You already have account ?</p>
+
+                        <NavLink to="/singIn" className="singIn">
+                            <button>Sing In </button>
+                        </NavLink>
+                    </div>
                 </div>
             </section>
         </>

@@ -15,6 +15,9 @@ import AddFavoritList from "../../../assets/icons/not-favoritIcon.png"
 import AddFavoritList2 from "../../../assets/icons/icon-like.png"
 import PosterMovie from "../../../assets/pictures/poster2.jpg"
 import DropDownCategory from '../../layout/DropDownCategory/DropDownCategory';
+import MovieRating from '../../layout/MovieRating/MovieRating';
+import BtnAddWatchList from '../../layout/BtnAddToWatchlist/BtnAddWatchList';
+import BtnsAddFavList from '../../layout/BtnAddFavList/BtnsAddFavList';
 
 
 const AllMovies = () => {
@@ -93,10 +96,15 @@ const AllMovies = () => {
                             </div>
                             <div className="card-bottom">
                                 <p className="movieall-name">{movie.title}</p>
-                                <p className="movieall-rating">Rating: {movie.vote_average}</p>
-                                <div className="movieDetails-buttons">
-                                    <button className='favorite-btn'>Add to Favorite<img src={AddFavoritList} alt="" className='icon-favoriteIsFav' /></button>
-                                    <button className='watchlist-btn'>Add to Watch list<img src={AddWatchList} alt="" className='icon-watchlistIsOn' /> </button>
+                                <p className="movieall-rating">{/* Rating: {movie.vote_average} */}
+                                    <MovieRating movie={movie} />
+                                </p>
+                                {/*btns-Content je u hpslider.css  */}
+                                <div className="btns-Content">
+
+                                    <BtnAddWatchList />
+
+                                    <BtnsAddFavList />
                                 </div>
                             </div>
                         </div>

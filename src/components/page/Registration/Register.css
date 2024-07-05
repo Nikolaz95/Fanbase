@@ -1,0 +1,37 @@
+
+
+.section-createAccount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.content-registeringAccountCards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-registering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputEmail, .inputPwd, .inputUserName {
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    /* border: none; */
+}
+
+.registerighaveAcc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}

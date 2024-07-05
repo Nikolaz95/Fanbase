@@ -42,6 +42,8 @@ import ReviewsSection from '../../layout/MovieDetailsComponents/ReviewsSection';
 import VideoOfMovieSection from '../../layout/MovieDetailsComponents/VideoOfMovieSection';
 import MoviePictures from '../../layout/MovieDetailsComponents/MoviePictures';
 import Recommendation from '../../layout/MovieDetailsComponents/Recommendation';
+import BtnAddWatchList from '../../layout/BtnAddToWatchlist/BtnAddWatchList';
+import BtnsAddFavList from '../../layout/BtnAddFavList/BtnsAddFavList';
 
 
 
@@ -214,15 +216,12 @@ const MovieDetails = () => {
                         {/* userRating */}
                         <UserRating />
                         {/* userRating */}
-                        <div className="MovieDetails-btns">
-                            <button>
-                                <img src={AddWatchList} width={20} height={20} alt="" />
-                                Add to Watchlist
-                            </button>
-                            <button>
-                                <img src={AddFavoritList} width={20} height={20} alt="" />
-                                Add to Favorites
-                            </button>
+                        <div className="btns-Content">
+
+                            <BtnAddWatchList />
+
+                            <BtnsAddFavList />
+
                         </div>
                     </div>
                 </div>

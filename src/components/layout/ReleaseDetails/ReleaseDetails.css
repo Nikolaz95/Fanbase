@@ -31,6 +31,17 @@
     font-weight: 1000;
     padding: 10px;
 }
+
+.statusCircle.released {
+    background-color: green;
+    color: white;
+}
+
+.statusCircle.inProduction {
+    background-color: red;
+    color: white;
+}
+
 .releasedDateInfo {
     display: flex;
     flex-direction: row;

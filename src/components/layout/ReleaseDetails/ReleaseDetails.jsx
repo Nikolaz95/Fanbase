@@ -4,11 +4,23 @@ import React from 'react'
 import "./ReleaseDetails.css"
 
 const ReleaseDetails = ({ movieDetails }) => {
+    const getStatusClass = (status) => {
+        switch (status) {
+            case 'Released':
+                return 'statusCircle released';
+            case 'In Production':
+                return 'statusCircle inProduction';
+            default:
+                return 'statusCircle';
+        }
+    };
     return (
         <div className='MovieDetails-releaseDetails'>
             <div className='releasedStatusInfo'>
                 <p>Status:</p>
-                <span className='statusCircle'>{movieDetails?.status}</span>
+                <span className={getStatusClass(movieDetails?.status)}>
+                    {movieDetails?.status}
+                </span>
             </div>
 
             <div className='releasedDateInfo'>

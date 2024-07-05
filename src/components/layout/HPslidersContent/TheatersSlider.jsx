@@ -29,6 +29,9 @@ import AddFavoritList2 from "../../../assets/icons/icon-like.png"
 
 //import css
 import "./HpSlidersContent.css";
+import BtnAddWatchList from '../BtnAddToWatchlist/BtnAddWatchList';
+import BtnsAddFavList from '../BtnAddFavList/BtnsAddFavList';
+import MovieRating from '../MovieRating/MovieRating';
 
 const TheatersSlider = () => {
     const breakpoints = {
@@ -103,18 +106,15 @@ const TheatersSlider = () => {
                                     </div>
                                     <div className="botom-card">
                                         <h3 className="card-title">{movie.title}</h3>
-                                        <p className="card-rating">Rating: {movie.vote_average}</p>
-                                        <div className="btn-card">
-                                            <button className="add-to-watchlist"
-                                                title='Add to Watchlist'>
-                                                Add to Watchlist
-                                                <img src={AddWatchList} alt="" className='icon-add' />
-                                            </button>
-                                            <button
-                                                className="add-to-favorites">
-                                                Add to Favorites
-                                                <img src={AddFavoritList} alt="" className='icon-favorit' />
-                                            </button>
+                                        <p className="card-rating">{/* Rating: {movie.vote_average} */}
+                                            <MovieRating movie={movie} />
+                                        </p>
+                                        {/*btns-Content je u hpslider.css  */}
+                                        <div className="btns-Content">
+
+                                            <BtnAddWatchList />
+
+                                            <BtnsAddFavList />
                                         </div>
                                     </div>
                                 </div>

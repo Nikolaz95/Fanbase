@@ -1,0 +1,56 @@
+
+.singIn-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card-singIn {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.lef-singIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-singIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.inputEmail, .inputPwd {
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    /* border: none; */
+}
+
+
+.right-singIn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+@media only screen and (max-width: 425px) {
+    .card-singIn {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid black;
+    }
+}

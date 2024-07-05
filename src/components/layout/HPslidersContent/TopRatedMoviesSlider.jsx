@@ -16,6 +16,9 @@ import "./HpSlidersContent.css";
 /* icon */
 import { MdFavoriteBorder } from "react-icons/md";
 import { FiPlusCircle } from "react-icons/fi";
+import BtnAddWatchList from '../BtnAddToWatchlist/BtnAddWatchList';
+import BtnsAddFavList from '../BtnAddFavList/BtnsAddFavList';
+import MovieRating from '../MovieRating/MovieRating';
 const TopRatedMoviesSlider = () => {
     const breakpoints = {
         320: { slidesPerView: 1, spaceBetween: 10, },
@@ -89,10 +92,14 @@ const TopRatedMoviesSlider = () => {
                                     </div>
                                     <div className="botom-card">
                                         <h3 className="card-title">{movie.title}</h3>
-                                        <p className="card-rating">Rating: {movie.vote_average}</p>
-                                        <div className="btn-card">
-                                            <button className="add-to-watchlist">Add to Watchlist <FiPlusCircle className='icon-add' /></button>
-                                            <button className="add-to-favorites">Add to Favorites <MdFavoriteBorder className='icon-favorit' /></button>
+                                        <p className="card-rating">{/* Rating: {movie.vote_average} */}
+                                            <MovieRating movie={movie} />
+                                        </p>
+                                        <div className="btns-Content">
+
+                                            <BtnAddWatchList />
+
+                                            <BtnsAddFavList />
                                         </div>
                                     </div>
                                 </div>

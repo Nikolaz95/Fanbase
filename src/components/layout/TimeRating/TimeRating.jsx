@@ -12,7 +12,9 @@ const TimeRating = ({ movieDetails }) => {
             </div>
             <div className="MovieDetails-rating">
                 <p>Rating:</p>
-                <span className="MovieDetails-ratingCircle">{movieDetails?.vote_average}</span>
+                <span className="MovieDetails-ratingCircle">
+                    {movieDetails?.vote_average}
+                </span>
             </div>
         </div>
     )
