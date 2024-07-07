@@ -13,7 +13,7 @@ import "./WhereToWatch.css"
 const WhereToWatch = ({ onClickCloseModal, menuRef, watchProviders, movieDetails }) => {
     return (
 
-        <div className="modal-WhertoWth" >
+        <div className="modal-WhertoWth">
             <div className="modal-ContentWhertoWth" ref={menuRef}>
                 <div className="modal-InnerInfo">
                     <span className="modal-closeX" onClick={onClickCloseModal}>

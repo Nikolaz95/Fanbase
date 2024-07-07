@@ -36,6 +36,14 @@
     /* border: none; */
 }
 
+.pasword-contentSingIn img {
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    right: 30px;
+    top: 8px;
+}
+
 
 .right-singIn {
     display: flex;

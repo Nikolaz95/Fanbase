@@ -16,7 +16,7 @@ const SettingsProfileAccount = () => {
         <div>
             <div className="main-contentProfile">
                 <div className="head-AcoutProfile">
-                    <h1>Profile Info1</h1>
+                    <h1>Profile Info</h1>
                 </div>
                 <div className="tabs-contentProfile">
                     <TabNavAccount />

@@ -14,6 +14,8 @@ import Poster1 from "../../../assets/pictures/poster.jpg"
 import AddWatchList from "../../../assets/icons/icon-add.png"
 import AddFavorit from "../../../assets/icons/icon-check.png"
 import Remove from "../../../assets/icons/icon-cancelPic.png"
+import BtnAddWatchList from '../../layout/BtnAddToWatchlist/BtnAddWatchList'
+import BtnsAddFavList from '../../layout/BtnAddFavList/BtnsAddFavList'
 
 const FavoritListAccount = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +26,6 @@ const FavoritListAccount = () => {
             <div className="main-contentProfile">
                 <div className="head-AcoutProfile">
                     <h1>Your Favorit List</h1>
-                    <span className='notfi-WatchList'>2</span>
                 </div>
                 <div className="tabs-contentProfile">
                     <TabNavAccount />
@@ -49,15 +50,10 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
+
                             </li>
 
                             {/* 2 */}
@@ -75,14 +71,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -101,14 +91,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -127,14 +111,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -153,14 +131,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -179,14 +151,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -205,14 +171,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -231,14 +191,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -257,14 +211,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -284,14 +232,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -310,14 +252,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -337,14 +273,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -364,14 +294,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 
@@ -391,14 +315,8 @@ const FavoritListAccount = () => {
                                     <p>2024-07-02</p>
                                 </div>
                                 <div className="MovieWatFavlist-btns">
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Watchlist
-                                    </button>
-                                    <button>
-                                        <img src={AddWatchList} width={20} height={20} alt="" />
-                                        Add to Favorites
-                                    </button>
+                                    <BtnAddWatchList />
+                                    <BtnsAddFavList />
                                 </div>
                             </li>
 

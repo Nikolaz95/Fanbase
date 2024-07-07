@@ -29,6 +29,15 @@
     /* border: none; */
 }
 
+.pasword-contentRegister img{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 11px;
+    left: -40px;
+    cursor: pointer;
+}
+
 .registerighaveAcc {
     display: flex;
     flex-direction: column;

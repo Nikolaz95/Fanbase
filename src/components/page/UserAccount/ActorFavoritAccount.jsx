@@ -18,7 +18,6 @@ const ActorFavoritAccount = () => {
             <div className="main-contentProfile">
                 <div className="head-AcoutProfile">
                     <h1>Your Favorit Actors List</h1>
-                    <span className='notfi-WatchList'>2</span>
                 </div>
                 <div className="tabs-contentProfile">
                     <TabNavAccount />

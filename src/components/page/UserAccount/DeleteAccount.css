@@ -1,0 +1,70 @@
+
+
+.setting-deleteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.settingDeleteInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.setting-profileDeleteImg {
+    width: 250px;
+    height: 200px;
+}
+
+.setting-profileDeleteBotom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* modal confir  */
+
+.modal-InnerInfoConfirmDeleteAcc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: rgb(115, 141, 65);
+    border-radius: 20px;
+}
+
+.modalInnerDeleteContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.modalTopDeleteContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalBotomDeleteContent {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.icon-ConfirdeleteAccount, .icon-CanceldeleteAccount {
+    width: 30px;
+    height: 30px;
+}

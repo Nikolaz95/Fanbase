@@ -22,7 +22,6 @@ const BtnAddWatchList = () => {
             {notOnWatchList ? 'On Your List' : 'Add to Watchlist'}
             <img src={notOnWatchList ? IsOnWatchList : AddWatchList}
                 alt="Watchlist Icon" className='icon-add' />
-            {/* <img src={AddWatchList} alt="" className='icon-add' /> */}
         </button>
     )
 }

@@ -52,12 +52,12 @@ const SideBarNavSettings = () => {
                 </li>
 
                 <li>
-                    {/* <NavLink to="/user/settings-DeleteAccount"> */}
-                    <div className="sidebarOptions-content">
-                        <p>Delete account</p>
-                        <img src={DeleteAccoutn} alt="" width={30} height={30} className='icon-navBar' />
-                    </div>
-                    {/* </NavLink> */}
+                    <NavLink to="/user/settings-DeleteAccount">
+                        <div className="sidebarOptions-content">
+                            <p>Delete account</p>
+                            <img src={DeleteAccoutn} alt="" width={30} height={30} className='icon-navBar' />
+                        </div>
+                    </NavLink>
                 </li>
             </ul>
         </div>

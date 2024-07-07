@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 
 //import css
 import "./SingIn.css"
 
+//import  icon
+import Show from "../../../assets/icons/icon-show.png"
+import Hide from "../../../assets/icons/icon-hide.png"
 
 //import components
 import TitleName from '../../layout/TitleName/TitleName'
 
 const SingIn = () => {
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     return (
         <>
             <TitleName title={"Sing in"} />
@@ -25,7 +30,17 @@ const SingIn = () => {
 
                             <label htmlFor="pwd">Password :</label>
                             <div className="pasword-contentSingIn">
-                                <input type='text' id='pwd' className='inputPwd' placeholder='password...' />
+                                <input type={showPassword ? "text" : "password"}
+                                    id='pwd'
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className='inputPwd'
+                                    placeholder='password...' />
+                                <img
+                                    title={showPassword ? "Hide password" : "Show password"}
+                                    src={showPassword ? Hide : Show}
+                                    onClick={() => setShowPassword(prevState => !prevState)}
+                                />
                             </div>
 
                             <div className="btn-loginSingIn">

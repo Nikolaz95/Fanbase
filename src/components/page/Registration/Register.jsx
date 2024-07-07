@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 //import css
 import "./Register.css"
 
+//import  icon
+import Show from "../../../assets/icons/icon-show.png"
+import Hide from "../../../assets/icons/icon-hide.png"
+
 //import components
 import TitleName from '../../layout/TitleName/TitleName'
-import { NavLink } from 'react-router-dom'
 
 const Register = () => {
+
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     return (
         <>
             <TitleName title={"Register"} />
@@ -25,7 +32,18 @@ const Register = () => {
                             <input type="email" name="email" id='mail' className='inputEmail' placeholder='fake@email.com' />
 
                             <label htmlFor="pwd">Password :</label>
-                            <input type="password" name="password" id='pwd' className='inputPwd' placeholder='password...' />
+                            <div className="pasword-contentRegister">
+                                <input type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    id='pwd'
+                                    className='inputPwd'
+                                    placeholder='password...' />
+                                <img
+                                    title={showPassword ? "Hide password" : "Show password"}
+                                    src={showPassword ? Hide : Show}
+                                    onClick={() => setShowPassword(prevState => !prevState)}
+                                />
+                            </div>
 
                             <div className="btn-login">
                                 <button className="create-accBtn" type="submit">
