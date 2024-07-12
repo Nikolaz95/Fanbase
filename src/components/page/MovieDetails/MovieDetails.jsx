@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Rating from '@mui/material/Rating';
-import { NavLink, useParams } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { useParams } from 'react-router-dom';
+
 
 //import css
 import "./MovieDetails.css"
@@ -74,6 +72,7 @@ const MovieDetails = () => {
 
 
     useEffect(() => {
+        console.log('Movie ID:', params.id);
         async function fetchMovieDetails() {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=d0e15d3cd703e39934833d9dc348e907`);
             const json = await response.json()

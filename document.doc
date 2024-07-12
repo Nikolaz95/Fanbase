@@ -1,0 +1,19 @@
+
+
+react folder structure
+
+Assets Folder
+Kao što naziv kaže, sadrži sredstva našeg projekta. Sastoji se od slika i stilskih datoteka. Ovdje možemo pohraniti naše globalne stilove. Centraliziramo projekt tako da ovdje možemo pohraniti stilove koji se temelje na stranici ili na komponentama. Ali možemo čak zadržati stil i prema mapi stranica ili mapi komponenti. Ali to ovisi o udobnosti programera.
+
+
+Layouts Folder
+Kao što naziv kaže, sadrži rasporede dostupne cijelom projektu poput zaglavlja, podnožja itd. Ovdje možemo pohraniti zaglavlje, podnožje ili kod bočne trake i pozvati ga.
+
+Components Folder
+Komponente su građevni blokovi svakog react projekta. Ova se mapa sastoji od zbirke komponenti korisničkog sučelja poput gumba, modala, unosa, programa za učitavanje itd., koje se mogu koristiti u različitim datotekama u projektu. Svaka bi se komponenta trebala sastojati od testne datoteke za izvođenje jediničnog testa jer će se široko koristiti u projektu.
+
+Pages Folder
+Datoteke u mapi stranica pokazuju rutu react aplikacije. Svaka datoteka u ovoj mapi sadrži svoju rutu. Stranica može sadržavati svoju podmapu. Svaka stranica ima svoje stanje i obično se koristi za pozivanje operacije sinkronizacije. Obično se sastoji od različitih grupiranih komponenti.
+
+Testing Folder
+jedinični testovi i druge vrste testova za vaš kod.

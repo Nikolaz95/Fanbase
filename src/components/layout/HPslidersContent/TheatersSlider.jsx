@@ -60,7 +60,8 @@ const TheatersSlider = () => {
                 }
 
                 const jsonData = await response.json();
-                setMovies(jsonData.results); // Assuming the movie results are in the 'results' property
+                console.log(jsonData)/* to se info of movie */
+                setMovies(jsonData.results);
 
             } catch (error) {
                 setError(error.message);

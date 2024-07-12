@@ -2,15 +2,15 @@
 
 /* settings conten style */
 .settingsMain-mainContent {
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .settingsMain-Content {
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 20px;
-    border: 1px solid black;
     height: 550px;
+    border: 1px solid black;
 }
 
 /* settings conten MAIN style */
